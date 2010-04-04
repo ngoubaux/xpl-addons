@@ -1,0 +1,6 @@
+Revision history for Perl extension xPL::Dock::Nabaztag.
+
+0.01  Sun Mar 21 10:32:01 2010
+	- original version; created by h2xs 1.23 with options
+		-X -n xPL::Dock::Nabaztag
+

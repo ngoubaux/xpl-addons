@@ -1,0 +1,17 @@
+#!/usr/bin/perl -w
+
+eval 'exec /usr/bin/perl -w -S $0 ${1+"$@"}'
+    if 0; # not running under some shell
+
+use xPL::Dock qw/Nabaztag/;
+
+my $xpl = xPL::Dock->new;
+$xpl->main_loop;
+
+#use Nabaztagv2 ; # OR
+
+
+my $mac = '001D92105812';
+my $token = '1204020502';
+
+#$nab->sayThis("Demain, il pleuvra des grillons jusqu'a extinction totale de la race humaine.");

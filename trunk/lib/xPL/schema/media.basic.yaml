@@ -1,0 +1,24 @@
+---
+doc: http://xplproject.org.uk/wiki/index.php?title=Schema_-_MEDIA
+default_message_type: xpl-cmnd
+types:
+  xpl-cmnd:
+    fields:
+      - name: command
+        required: 1
+        validation:
+          type: Set
+          set: 
+            - power
+      - name: md
+        required: 1
+      - name: state
+        validation:
+          type: Set
+          set:
+            - on
+            - off
+    summary:
+      - name: md
+      - name: command
+        prefix: " "
