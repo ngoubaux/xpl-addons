@@ -27,8 +27,8 @@ A xpl rule can be build with
   * class: the name of the xPL class. Look on the [http://xplproject.org.uk xPL Project] schema wiki page to know all class names: [http://xplproject.org.uk/wiki/index.php?title=XPL_Message_Schema here]
   * device: can be
         * the device name
-        * lookup_map[`type`] where type is the map type the rule will search for matching
-        * lookup_`type`[`values`]
+        * lookup_map`[`_type_`]` where type is the map type the rule will search for matching
+        * lookup_ _type_`[`_values_`]`
 
 {{{
 message_type="(xpl-trig|xpl-stat)" class="sensor.basic" device="lookup_map[ztamp]"
