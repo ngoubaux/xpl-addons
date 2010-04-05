@@ -1,0 +1,18 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+This google code page contains some addons for [http://www.xpl-perl.org.uk/ xpl-perl] and [http://www.zenah.org.uk/ zenah] projects.
+
+
+= Details =
+
+xPL-perl project:
+  * Bluetooth fix
+  * Violet's Nabaztag xPL client
+  * Violet's Mirror xPL client
+
+Zenah project:
+  * iPhone theme
+
+Look inside the source and enjoy.
