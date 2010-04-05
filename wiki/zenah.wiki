@@ -1,0 +1,20 @@
+#summary One-sentence summary of this page.
+#labels zenah,rule,website,template
+
+= Introduction =
+
+Zenah has two part:
+  * Engine
+  * Web site
+ 
+This page try to explain a little bit how to use Zenah. 
+
+= rules engine =
+
+First you can see the wiki page on the zenah web site: [http://www.zenah.org.uk/wiki/Engine here]
+Zenah has several rule types:
+  * *xpl*: the trigger is based on each xPL message received by the engine.
+  * *scene* : the trigger is call by other rules
+  * *at*: the trigger is based `xPL::Timer` events
+
+===Rule type: xpl ==
