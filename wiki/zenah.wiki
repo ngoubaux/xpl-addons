@@ -17,4 +17,19 @@ Zenah has several rule types:
   * *scene* : the trigger is call by other rules
   * *at*: the trigger is based `xPL::Timer` events
 
-===Rule type: xpl ==
+===Rule type: xpl ===
+
+A xpl rule can be build with
+  * message_type : can be 
+         * xpl-trig
+         * xpl-stat
+         * both (xpl-trig|xpl-stat)
+  * class: the name of the xPL class. Look on the [http://xplproject.org.uk xPL Project] schema wiki page to know all class names: [http://xplproject.org.uk/wiki/index.php?title=XPL_Message_Schema here]
+  * device: can be
+        * the device name
+        * lookup_map[`type`] where type is the map type the rule will search for matching
+        * lookup_`type`[`values`]
+
+{{{
+message_type="(xpl-trig|xpl-stat)" class="sensor.basic" device="lookup_map[ztamp]"
+}}}
