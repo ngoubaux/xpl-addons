@@ -1,6 +1,7 @@
 lib/xPL/Dock/Nabaztag.pm
 lib/xPL/schema/media.basic.yaml
 lib/xPL/Dock/Mirror.pm
+lib/xPL/Dock/GoogleWeather.pm
 Changes
 Makefile.PL
 MANIFEST
@@ -8,3 +9,4 @@ README
 t/xPL-Dock-Nabaztag.t
 bin/xpl-nabaztag
 bin/xpl-mirror
+bin/xpl-googleweather

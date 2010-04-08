@@ -14,7 +14,7 @@ while (<$fh>) {
 $fh->close;
 
 WriteMakefile(
-    NAME              => 'xpl-Nabaztag',
+    NAME              => 'xpl-addons',
     VERSION_FROM      => 'lib/xPL/Dock/Nabaztag.pm', # finds $VERSION
     EXE_FILES         => \@exe,
     PREREQ_PM         => {

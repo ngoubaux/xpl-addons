@@ -18,9 +18,9 @@ This L<xPL::Dock> plugin adds Google Weather monitoring.
 
 =cut
 
-use 5.006;
 use strict;
 use warnings;
+use encoding 'utf8';
 
 use English qw/-no_match_vars/;
 use xPL::Dock::Plug;
@@ -66,13 +66,12 @@ sub init {
 
   $self->SUPER::init($xpl, @_);
 
-  $xpl->add_timer(id => 'googleweather',
+  $xpl->add_timer(id => 'GoogleWeather',
                   timeout => -$self->interval,
                   callback => sub { $self->poll(); 1 });
 
   $self->{_buf} = '';
-  $self->{_state} = {};
-  $self->{_url} = "http://www.google.com/ig/api?weather=$self->{_url}&hl=fr";
+  $self->{_url} = 'http://www.google.com/ig/api?weather=06800&hl=fr';
   $self->{_xml} = new XML::Simple;
   return $self;
 }
@@ -86,14 +85,15 @@ This method is the timer callback that polls the mythtv daemon.
 sub poll {
   my $self = shift;
 
-  my $content = get $self->{url}; 
+  my $content = get $self->{_url}; 
   unless ($content) {
-    warn "Can't get $self->{url} \n";  
+    warn "Can't get $self->{_url} \n";  
     return 1;
   }
-
-  my $u = Unicode::String->new($content);
-  my $data = $self->{xml}->XMLin($u);
+	#print $content;
+	#my $u = Unicode::String->new($content);
+	my  $u =  Encode::decode_utf8($content);
+  my $data = $self->{_xml}->XMLin($u);
 
     $self->xpl->send(message_type => 'xpl-stat', class => 'sensor.basic',
                      body => { device => $self->xpl->instance_id.'-gweather',
