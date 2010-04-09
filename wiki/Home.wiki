@@ -1,9 +1,9 @@
-#summary This google code page contains some addons for [http://www.xpl-perl.org.uk/ xpl-perl] and [http://www.zenah.org.uk/ zenah] projects.
+#summary Help and addons for xPL-Perl and Zenah projects
 
-#sidebar TableOfContents
+#sidebar sidebarnav
 
-* [Home Intro]
-* [zenah Zenah]
+= Introduction =
+This google code page contains some addons for [http://www.xpl-perl.org.uk/ xpl-perl] and [http://www.zenah.org.uk/ zenah] projects.
 
 = Details =
 
