@@ -11,6 +11,7 @@ xPL-perl project:
   * Bluetooth fix
   * Violet's Nabaztag xPL client
   * Violet's Mirror xPL client
+  * Google Weather sensor xPL client
 
 Zenah project:
   * iPhone theme
