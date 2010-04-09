@@ -1,8 +1,10 @@
 #summary One-sentence summary of this page.
+#sidebar TableOfContents
 
 * [Home Intro]
 * [zenah Zenah]
 
+<wiki:toc max_depth="1" />
 
 = Introduction =
 
