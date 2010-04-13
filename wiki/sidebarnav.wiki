@@ -1,3 +1,4 @@
 [Home Intro]
     * [zenah Zenah]
     * [zenah_template Zenah Template]
+    * [zenah_device Zenah Device]
