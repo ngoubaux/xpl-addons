@@ -7,5 +7,22 @@ Better than theory, I will show you how to create an iPhone template.
 
 = Details =
 
+First thing is to named your template and tell Zenah engine with template to use.
+
 === ScreenShots ===
-<img src="http://code.google.com/p/xpl-addons/w/img/tpl_iphone_main_menu.jpg">
+
+Main menu as the default template navigation.
+
+<img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_main_menu.jpg">
+
+Rooms page
+
+<img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_rooms.jpg">
+
+Room page
+
+<img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_room.jpg">
+
+Device's Actions page
+
+<img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_device_action.jpg">
