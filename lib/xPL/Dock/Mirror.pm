@@ -38,7 +38,7 @@ __PACKAGE__->make_readonly_accessor($_) foreach (qw/device/);
  use base 'xPL::IORecord::Simple';
  sub read { 
   $_[1] =~ s/^\x00*//;
- 
+	 sleep 0.5;
   if (!length $_[1]) {
     $_[0]->new(raw => $_[1]);
     return 1;
