@@ -7,7 +7,5 @@ Better than theory, I will show you how to create an iPhone template.
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+=== ScreenShots ===
+<img src="http://code.google.com/p/xpl-addons/w/img/tpl_iphone_main_menu.jpg">
