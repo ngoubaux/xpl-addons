@@ -9,6 +9,7 @@ Better than theory, I will show you how to create an iPhone template.
 = Details =
 
 First thing is to named your template and tell Zenah engine with template to use.
+You will find inside the source 'iPhone_template.sql'. This SQL file will add the iPhone Template to the Zenah engine.
 
 === ScreenShots ===
 
