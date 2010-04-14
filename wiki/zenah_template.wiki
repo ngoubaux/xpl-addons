@@ -25,6 +25,10 @@ Room page
 
 <img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_room.jpg">
 
+Device with sensor page
+
+<img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_room_sensor.jpg">
+
 Device's Actions page
 
 <img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_device_action.jpg">
