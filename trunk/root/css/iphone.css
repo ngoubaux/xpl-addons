@@ -7,3 +7,33 @@ body > div.toolbar { background-image:url(../images/logo.png), url(../images/too
 
 /* CUSTOM BACKBUTTON, change color with new border-image, set background-image to none since we don't support images on backButton */
 #backButton {  -webkit-border-image: url(../images/backButton.png) 0 8 0 14;  background-image: none;}
+
+ul li small {
+					color: #369;
+					font: 17px Helvetica;
+					text-align: right;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+					display: block;
+					width: 23%;
+					float: right;
+					padding: 3px 0px;
+					}
+					
+ul li small.counter {
+						font-size: 17px !important;
+						line-height: 13px !important;
+						font-weight: bold;
+						background: rgb(154,159,170);
+						color: #fff;
+						-webkit-border-radius: 11px;
+						padding: 4px 10px 5px 10px;
+						display: inline !important;
+						width: auto;
+						margin-top: 2px;
+					}
+					
+ul li small.counter {
+						margin-right: 30px;
+					}
