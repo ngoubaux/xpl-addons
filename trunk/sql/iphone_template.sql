@@ -56,12 +56,24 @@ INSERT INTO "template" VALUES(48,'iphone','default','[% SET t_content = ''iphone
 INSERT INTO "template" VALUES(49,'iphone','house',' [% PROCESS iphone/main %]
  [% PROCESS iphone/rooms %]
  [% PROCESS iphone/devices %]',1270579949);
-INSERT INTO "template" VALUES(50,'iphone','rooms','[% USE table_class = Class(''ZenAH::Model::CDBI::Room'') %] 
+INSERT INTO "template" VALUES(50,'iphone','rooms','[% USE table_class = Class('ZenAH::Model::CDBI::Room') %]
+[% USE stable_class = Class('ZenAH::Model::CDBI::State') %]
 <ul id="rooms" title="Rooms">
-[% FOR zone = [''Downstairs'', ''Upstairs'', ''Outside''] %] 
+[% FOR zone = ['Downstairs', 'Upstairs', 'Outside'] %] 
     <li class="group">[% zone %]</li> 
-    [% FOR r = table_class.by_attribute(''zone'', zone) %] 
+    [% FOR r = table_class.by_attribute('zone', zone) %] 
        <li id="[% r.name %]_tab"> 
+          [% FOR d = r.devices %]
+                [% NEXT UNLESS d.type == 'Sensor' %]
+                [% SET s = stable_class.search({ name => d.name }) %]
+                 [% IF s %]
+                    [% FOREACH sensor = s %]
+                      [% IF sensor.type == 'temp' %]
+                         <small id="temp" class="counter">[% sensor.value %]°C</small>
+                      [% END %]
+                   [% END %]
+                [% END %]
+          [% END %]
           <a href="[% Catalyst.uri_for("/iphonefragment/room") %]?content=room&room=[% r.id %]">[% r.string %]</a> 
        </li>
     [% END %]
