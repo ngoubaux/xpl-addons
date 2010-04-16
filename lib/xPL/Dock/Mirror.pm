@@ -50,7 +50,7 @@ __PACKAGE__->make_readonly_accessor($_) foreach (qw/device/);
  1;
 }
 
-my $vendor_id = 'tlam';
+my $vendor_id = 'goubs';
 
 =head2 C<getopts( )>
 
