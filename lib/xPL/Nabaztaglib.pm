@@ -551,6 +551,7 @@ sub _assume{
 
 =head1 AUTHOR
 
+Nicolas Goubaux << <nicolasg@goubs.net> >>
 Jerome Eteve, C<< <jerome@eteve.net> >>
 Christophe Gevrey << <gevrey+cpan@pobox.com> >>
 
