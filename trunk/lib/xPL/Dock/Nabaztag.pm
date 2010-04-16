@@ -184,15 +184,15 @@ Marmitek website: http://www.marmitek.com
 
 =head1 AUTHOR
 
-CM15A:
-Thibault Lamy, E<lt>titi@poulpy.comE<gt>
+Nabaztag:
+Nicolas Goubaux, E<lt>nicolasg@goubs.netE<gt>
 
 xpl-perl:
 Mark Hindess, E<lt>soft-xpl-perl@temporalanomaly.comE<gt>
 
 =head1 COPYRIGHT
 
-Copyright (C) 2010 by Thibault Lamy
+Copyright (C) 2010 by Nicolas Goubaux 
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.7 or,
