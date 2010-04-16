@@ -33,7 +33,7 @@ our $VERSION = "0.3";
 
 __PACKAGE__->make_readonly_accessor($_) foreach (qw/device/);
 
-my $vendor_id = 'tlam';
+my $vendor_id = 'goubs';
 
 =head2 C<getopts( )>
 
