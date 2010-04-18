@@ -93,13 +93,23 @@ sub poll {
 	#print $content;
 	#my $u = Unicode::String->new($content);
 	my  $u =  Encode::decode_utf8($content);
-  my $data = $self->{_xml}->XMLin($u);
-
+    my $data = $self->{_xml}->XMLin($u);
+    my $temp = $data->{weather}->{current_conditions}->{temp_c}->{data};
+	my $humidity = $data->{weather}->{current_conditions}->{humidity}->{data};
+	$humidity =~ /(\d+)/;
+	$humidity = $1;
+	
     $self->xpl->send(message_type => 'xpl-stat', class => 'sensor.basic',
                      body => { device => $self->xpl->instance_id.'-gweather',
                                type => 'temp',
-                               current => $data->{weather}->{current_conditions}->{temp_c}->{data},
+                               current => $temp,
                                units => 'c' });
+	
+	
+	$self->xpl->send(message_type => 'xpl-stat', class => 'sensor.basic',
+	body => { device => $self->xpl->instance_id.'-gweather',
+		type => 'humidity',
+		current => $humidity });
   return 1;
 }
 
