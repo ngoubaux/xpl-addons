@@ -17,6 +17,10 @@ Main menu as the default template navigation.
 
 <img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_main_menu.jpg">
 
+Sensors page
+
+<img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_sensors.jpg">
+
 Rooms page
 
 <img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_rooms.jpg">
@@ -25,9 +29,11 @@ Room page
 
 <img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_room.jpg">
 
-Device with sensor page
+Sensor page
 
 <img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_room_sensor.jpg">
+
+<img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_rrd.jpg">
 
 Device's Actions page
 
