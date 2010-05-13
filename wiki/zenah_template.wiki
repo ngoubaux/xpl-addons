@@ -31,7 +31,7 @@ Room page
 
 Sensor page
 
-<img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_room_sensor.jpg">
+<img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_sensor.jpg">
 
 <img src="https://xpl-addons.googlecode.com/svn/wiki/img/tpl_iphone_rrd.jpg">
 
