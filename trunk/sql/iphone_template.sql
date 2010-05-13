@@ -29,15 +29,12 @@ INSERT INTO "template" VALUES(47,'site','iphone','<!DOCTYPE HTML PUBLIC "-//W3C/
   <title>[% template.title or site.title %] for iPhone</title>
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>  
   <meta name="apple-mobile-web-app-capable" content="yes" /> 
-  <link rel="icon" type="image/png" href="favicon.png"> 
-  <link rel="apple-touch-icon" href="images/zenah-50.png" />
   <style type="text/css" media="screen">
 @import "iui/iui.css";
 @import "iui/t/default/default-theme.css";
 @import "iui/ext-sandbox/masabi/t/default/iui_ext.css";
 </style>
   <link rel="stylesheet" href="css/iui-panel-list_.css" type="text/css" /> 
-  <link rel="stylesheet" href="css/iphone.css" type="text/css" /> 
   <script type="application/x-javascript" src="iui/iui.js"></script> 
   <script type="application/x-javascript" src="iui/ext-sandbox/masabi/iui_ext.js"></script>
 [% IF meta_refresh %]
@@ -53,41 +50,23 @@ INSERT INTO "template" VALUES(47,'site','iphone','<!DOCTYPE HTML PUBLIC "-//W3C/
  <body>
 [% content %]
  </body>
-</html>',1271178196);
+</html>',1271170543);
 INSERT INTO "template" VALUES(48,'iphone','default','[% SET t_content = ''iphone/'' _ (Catalyst.request.param(''content'') || ''house'') %]
 [% PROCESS $t_content %]',1269770643);
 INSERT INTO "template" VALUES(49,'iphone','house',' [% PROCESS iphone/main %]
  [% PROCESS iphone/rooms %]
- [% PROCESS iphone/devices %]
- [% PROCESS iphone/sensors %]
- [% PROCESS iphone/lights %]
- [% PROCESS iphone/devices_action %]',1271598636);
-INSERT INTO "template" VALUES(50,'iphone','rooms','[% USE table_class = Class(''ZenAH::Model::CDBI::Room'') %]
-[% USE stable_class = Class(''ZenAH::Model::CDBI::State'') %]
+ [% PROCESS iphone/devices %]',1270579949);
+INSERT INTO "template" VALUES(50,'iphone','rooms','[% USE table_class = Class(''ZenAH::Model::CDBI::Room'') %] 
 <ul id="rooms" title="Rooms">
-[% FOR zone = [''Principale'', ''Repos'', ''Extérieur''] %] 
+[% FOR zone = [''Downstairs'', ''Upstairs'', ''Outside''] %] 
     <li class="group">[% zone %]</li> 
     [% FOR r = table_class.by_attribute(''zone'', zone) %] 
        <li id="[% r.name %]_tab"> 
-          [% FOR d = r.devices %]
-                [% NEXT UNLESS d.type == ''Sensor'' %]
-                [% SET s = stable_class.search({ name => d.name }) %]
-                 [% IF s %]
-                    [% FOREACH sensor = s %]
-                      [% IF sensor.type == ''temp'' %]
-                         <small id="temp" class="counter">[% sensor.value %]°C</small>
-                      [% END %]
-                   [% END %]
-                [% END %]
-          [% END %]
-          <a href="[% Catalyst.uri_for("/iphonefragment/room") %]?content=room&room=[% r.id %]">
-             <img src="images/puzzle.png" />
-             [% r.string %]
-          </a> 
+          <a href="[% Catalyst.uri_for("/iphonefragment/room") %]?content=room&room=[% r.id %]">[% r.string %]</a> 
        </li>
     [% END %]
 [% END %]
-</ul>',1271619922);
+</ul>',1270583560);
 INSERT INTO "template" VALUES(51,'iphone','header','<!-- BEGIN nav -->
 <div class="toolbar">
   <h1 id="pageTitle"></h1>
@@ -95,38 +74,38 @@ INSERT INTO "template" VALUES(51,'iphone','header','<!-- BEGIN nav -->
 </div>',1270487171);
 INSERT INTO "template" VALUES(52,'iphone','main','<ul id="house" title="house" selected="true">
     <li id="lights_tab">
-        <a href="#lights"><img src="images/light_bulb.png" />Lights</a>
+        <a href="[% Catalyst.uri_for("/iphone") %]?content=lights">Lights</a>
     </li>
     <li id="rooms_tab">
-        <a href="#rooms"><img src="images/puzzle.png" /> Rooms</a>
+        <a href="#rooms">Rooms</a>
     </li>
     <li id="devices_tab">
-        <a href="#devices"><img src="images/wired.png" /> Devices</a>
+        <a href="#devices">Devices</a>
     </li>
     <li id="windows_tab">
-        <a href="#windows"><img src="images/promotion.png" /> Windows</a>
+        <a href="#windows">Windows</a>
     </li>
     <li id="motion_tab">
-        <a href="#motions"><img src="images/webcam.png" /> Motion</a>
+        <a href="#motions">Motion</a>
     </li>
     <li id="light_tab">
-        <a href="#lights"><img src="images/light_bulb.png" /> Light</a>
+        <a href="#lights">Light</a>
     </li>
     <li id="sensors_tab">
-        <a href="#sensors"><img src="images/wireless.png" /> Sensors</a>
+        <a href="#sensors">Sensors</a>
     </li>
-</ul>',1271598161);
+</ul>',1270579931);
 INSERT INTO "template" VALUES(53,'iphone','devices','[% USE table_class = Class(''ZenAH::Model::CDBI::Room'') %]
 [% SET rooms = table_class.retrieve_all() %]
 <ul id="devices" title="Devices">
   [% FOR r = rooms %]
         <li id="[% r.name %]" class="group">[% r.string %]</li>
        [% FOR d = r.devices %]
-            [% PROCESS iphone/device device = d %]
+            <li id="[% d.name %]">[% d.string %]</li>
         [% END %]
    [% END %]
 </ul>
-',1271601645);
+',1270581736);
 INSERT INTO "template" VALUES(54,'iphonefragment','room','[% USE table_class = Class(''ZenAH::Model::CDBI::Room'') %]
 [% SET room = table_class.retrieve(Catalyst.request.param(''room'')) %]
 <form id="room" class="panel" title="[% room.string %]">
@@ -137,11 +116,6 @@ INSERT INTO "template" VALUES(54,'iphonefragment','room','[% USE table_class = C
   [% NEXT UNLESS d.device_controls %]
   <div class="row">
      <a href="#action_[% d.name %]">
-         [% SET img = ''wired.png'' %]
-         [% IF  d.type == ''X10Lamp'' %]
-            [% SET img = ''light_bulb.png'' %]
-         [% END %]
-         <img src="images/[% img %]" />
          [% d.string %]
         <var class="_lookup">...</var>
      </a>
@@ -149,83 +123,32 @@ INSERT INTO "template" VALUES(54,'iphonefragment','room','[% USE table_class = C
 [% END %]
 </fieldset>
 
-
+<h2>Sensors:</h2>
+<fieldset>xw
 [% FOR d = room.devices %]
   [% NEXT UNLESS d.type == ''Sensor'' %]
+  [% NEXT UNLESS d.device_controls %]
   [% PROCESS iphone/sensor device = d %]
 [% END %]
+</fieldset>
 </form>
-',1271613336);
-INSERT INTO "template" VALUES(55,'iphone','device','<li id="[% device.name %]">
-     <a href="#action_[% device.name %]">
-         [% SET img = ''wired.png'' %]
-         [% IF  device.type == ''X10Lamp'' %]
-            [% SET img = ''light_bulb.png'' %]
-         [% END %]
-         <img src="images/[% img %]" />
-         [% device.string %]
-     </a>
-</li>',1271612924);
-INSERT INTO "template" VALUES(56,'iphone','sensor','[% USE table_class = Class(''ZenAH::Model::CDBI::State'') %]
-[% IF device.attribute("uid") %]
-  [% SET s = table_class.search({ name => device.name }) %]
-[% ELSE %]
-  [% SET s = [] %]
-[% END %]
-<h2>[% device.string %]:</h2>
-<fieldset>
-  [% IF s %]
-    [% FOREACH sensor = s %]
-      <div class="row">
-         <label>[% sensor.type %]</label>
-          <var>  [% sensor.value %]</var>   
-      </div>
+
+ [% FOR d = room.devices %]
+  [% NEXT IF d.type == ''Sensor'' %]
+  [% NEXT UNLESS d.device_controls %]
+<form class="panel" id="action_[% d.name %]" tittle="[% d.string %]" >
+  <fieldset class="radiogroup">
+     [% FOR control = d.device_controls %]
+       <div class="row">
+         <label onclick="button_action(''[% d.name %]'',''[% control.name %]''); iui.goBack();">[% control.string %]
+         </label>
+        </div>
      [% END %]
-  [% ELSE %]
-    <div class="row">no results</div>
-  [% END %]
-</fieldset>',1271277161);
-INSERT INTO "template" VALUES(57,'iphone','sensors','[% USE table_class = Class(''ZenAH::Model::CDBI::Device'') %]
-[% USE state_class = Class(''ZenAH::Model::CDBI::State'') %]
-<div id="sensors" class="panel" title="Sensors">
-    [% FOR d = table_class.search({ type => ''Sensor'' }) %]
-       <h2 >[% d.string %]</h2>
-       <ul id="[% d.name %]_tab" tittle="[% d.string %]"> 
-          [% FOREACH sensor = state.search({ name => d.name}) %]
-             <li id="[% sensor.name %]"> [% sensor.string %]
-                 <small id="temp" class="counter">[% sensor.value %]
-                      [% IF sensor.type == ''temp'' %] °C [% END %]
-                 </small>
-            </li>
-         [% END %]
-     </ul>
-    [% END %]
-</div>',1271586514);
-INSERT INTO "template" VALUES(58,'iphone','devices_action','[% USE table_class = Class(''ZenAH::Model::CDBI::Device'') %]
-  [% FOR d = table_class.retrieve_all() %]
-    [% NEXT IF d.type == ''Sensor'' %]
-    [% NEXT UNLESS d.device_controls %]
-      <form class="panel" id="action_[% d.name %]" tittle="[% d.string %]" >
-        <fieldset class="radiogroup">
-         [% FOR control = d.device_controls %]
-           <div class="row">
-              <label onclick="button_action(''[% d.name %]'',''[% control.name %]''); iui.goBack();">[% control.string %]
-              </label>
-            </div>
-          [% END %]
-        </fieldset>
-     </form>
-  [% END %]',1271586454);
-INSERT INTO "template" VALUES(60,'iphone','lights','[% USE table_class = Class(''ZenAH::Model::CDBI::Room'') %]
-[% SET rooms = table_class.retrieve_all() %]
-<ul id="lights" title="Devices">
-  [% FOR r = rooms %]
-        <li id="[% r.name %]" class="group">[% r.string %]</li>
-       [% FOR d = r.devices %]
-          [% NEXT UNLESS d.type == ''X10Lamp'' %]
-            [% PROCESS iphone/device device = d %]
-        [% END %]
-   [% END %]
-</ul>
-',1271602334);
+  </fieldset>
+</form>
+[% END %]
+',1271171208);
+INSERT INTO "template" VALUES(55,'iphone','device','[% FOR control = device.device_controls %]
+  <option value="[% control.name %]">[% control.string %]</option> 
+[% END %]',1270978329);
 COMMIT;
