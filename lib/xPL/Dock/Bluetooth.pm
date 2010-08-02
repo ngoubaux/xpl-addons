@@ -177,13 +177,15 @@ plugin.
 
 sub getopts {
   my $self = shift;
-  $self->{_interval} = 30;
+  $self->{_intervaloff} = 30;
+  $self->{_intervalon} = 300;
   $self->{_timeout} = 120;
   $self->{_addresses} = [];
   return
     (
      'bluetooth-verbose+' => \$self->{_verbose},
-	 'bluetooth-poll-interval=i' => \$self->{_interval},
+	'bluetooth-poll-interval-off=i' => \$self->{_intervaloff},
+	'bluetooth-poll-interval-on=i' => \$self->{_intervalon},
 	 'bluetooth-timeout=i' => \$self->{_timeout},
      'bluetooth-address=s' => $self->{_addresses},
     );
@@ -206,7 +208,7 @@ sub init {
     $self->{_watch} = [ map { uc } @{$self->{_addresses}} ];
     $self->{_state} = {};
     $xpl->add_timer(id => 'poll-bluetooth',
-                    timeout => -$self->{_interval},
+                    timeout => 10,
                     callback => sub { $self->poll_bluetooth(@_) });
   return $self;
 }
@@ -225,9 +227,13 @@ sub poll_bluetooth {
 	
 	foreach my $addr (@{$self->{_watch}}) {
 		$self->{_adapter} = open_adapter();
+		# Get the previous value or initialize to away
 		my $old = defined($state->{$addr}->{v}) ? $state->{$addr}->{v} : -255;
+		
+		# return -255 for away or a value between 0 and -255
 		my $rssi = read_rssi($self->{_adapter}, $addr);
 		if ($rssi > 0) {
+			# An Error appear, try to reset the adapter
 			print "reset Bluetooth adapter\n";
 			reset_adapter($self->{_adapter});
 			# Pause;
@@ -239,10 +245,14 @@ sub poll_bluetooth {
 		my $type = "xpl-stat";
 		if ($rssi == -255) 
 		{
-			$state->{$addr}->{count} += 1;
-			print "$addr not found: check ", $state->{$addr}->{count}, "\n";
-			if ($state->{$addr}->{count} > 3) {
-			   $state->{$addr}->{v} = $rssi;
+			# to avoid broken
+			if ($old > -255) 
+			{
+			  $state->{$addr}->{count} += 1;
+			  print "$addr not found: check ", $state->{$addr}->{count}, "\n";
+			  if ($state->{$addr}->{count} > 3) {
+			     $state->{$addr}->{v} = $rssi;
+			  }
 			}
 			$type = ($old == -255) ? 'xpl-stat' : 'xpl-trig';
 		}

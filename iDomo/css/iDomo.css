@@ -1,0 +1,243 @@
+.x-tabbar.x-docked-bottom .x-tab img.icon-tabpanel-home {
+        -webkit-mask-box-image: url('../img/tabicons/home.png');
+		}
+
+.x-tab span {
+ font-size: 11px;
+}
+		
+#yw-forecast{clear:both;position:relative;width:100%;min-height:190px;height:14.6154em;*height:14.2632em;margin-bottom:15px;
+/*
+background:#CCE1FF url(http://l.yimg.com/a/i/us/nws/weather/crntcondbg_day.gif) repeat-x;
+border:1px solid #5182ce;border-left:none;border-right:none;
+*/
+}
+
+.loading {
+  background: rgba(0,0,0,.3) url(../img/loading.gif) center center no-repeat;
+  display: block;
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -5em;
+  margin-top: -5em;  
+  -webkit-border-radius: .5em;
+  color: #fff;
+  text-shadow: #000 0 1px 1px;
+  text-align: center;
+  padding-top: 8em;
+  font-weight: bold;
+}
+
+.customcontrol {
+    border: 1px solid #F7F7F7;
+    width: 78px;
+    height: 80px;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #EAEAEA;
+    border-right: 1px solid #EAEAEA;
+    border-top: 1px solid white;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.customcontrol:nth-child(2n)  {
+    margin-right: 4px;
+    margin-bottom: 5px;	
+}
+
+.customcontrol .device {
+    font-size: 80%;
+    display: block;
+    position: relative;
+	width: 200%;
+	text-align: center;	
+}
+
+.customcontrol:nth-child(2n) .device  {
+    display: none;
+}
+
+
+.customcontrol:nth-child(2n) .control  {
+    margin-top: 18px;
+}
+
+.customcontrol .control {	
+    position: relative;
+	text-align: center;
+	top: 20px;
+	vertical-align: middle;	
+}
+
+#freebox .device {
+    display: none;
+}
+
+#freebox .control {
+    display: none;
+}
+
+#freebox .customcontrol {
+    border: 0px;
+    margin: 0px;
+}
+
+#freebox {
+    background: black;
+}
+
+#freebox div div div {
+    background: black;
+}
+
+#freebox div div div:nth-child(1) {
+    position: fixed;
+    left:5px;
+    top: 10px;
+    background:url(../img/remote/haut+.png) no-repeat;
+    height: 40px;
+    width: 40px;
+
+}
+
+#freebox div div div:nth-child(2) {
+    position: fixed;
+    left:60px;
+    top: 5px;
+    background:url(../img/remote/btcentraleht.png) no-repeat;
+    height: 38px;
+    width: 114px;
+}
+
+#freebox div div div:nth-child(3) {
+    position: fixed;
+    left:190px;
+    top: 10px;
+    background:url(../img/remote/hautfleche.png) no-repeat;
+    height:47px;
+    width:39px;
+}
+
+#freebox div div div:nth-child(4) {
+    position: fixed;
+    left:5px;
+    top: 50px;
+    background:url(../img/remote/bas-.png) no-repeat;
+    height:45px;
+    width:41px;
+
+}
+
+#freebox div div div:nth-child(5) {
+    position: fixed;
+    left:55px;
+    top: 8px;
+    background:url(../img/remote/btcentralegauche.png) no-repeat;
+    height: 115px;
+    width: 38px;
+}
+
+#freebox div div div:nth-child(6) {
+    position: fixed;
+    left:90px;
+    top: 39px;
+    background:url(../img/remote/btcentraleok.png) no-repeat;
+    height: 58px;
+    width: 58px;
+}
+
+#freebox div div div:nth-child(7) {
+    position: fixed;
+    left:141px;
+    top: 10px;
+    background:url(../img/remote/btcentraledroite.png) no-repeat;
+    height: 115px;
+    width: 38px;
+}
+
+
+#freebox div div div:nth-child(8) {
+    position: fixed;
+    left:190px;
+    top: 50px;
+    background:url(../img/remote/basfleche.png) no-repeat;
+    height:45px;
+    width:39px;
+}
+
+#freebox div div div:nth-child(9) {
+    position: fixed;
+    left:59px;
+    top: 91px;
+    background:url(../img/remote/btcentralebas.png) no-repeat;
+    height:38px;
+    width:116px;
+}
+
+#freebox div div div:nth-child(10) {
+    position: fixed;
+    left: 5px;
+    top: 140px;
+    background:url(../img/remote/rouge.png) no-repeat;
+    height:34px;
+    width:44px;
+}
+
+
+#freebox div div div:nth-child(11) {
+    position: fixed;
+    left:55px;
+    top: 140px;
+    background:url(../img/remote/vert.png) no-repeat;
+    height:34px;
+    width:43px;
+}
+
+#freebox div div div:nth-child(12) {
+    position: fixed;
+    left:106px;
+    top: 140px;
+    background:url(../img/remote/jaune.png) no-repeat;
+    height:34px;
+    width:43px;
+}
+
+#freebox div div div:nth-child(13) {
+    position: fixed;
+    left:158px;
+    top: 140px;
+    background:url(../img/remote/bleu.png) no-repeat;
+    height:34px;
+    width:43px;
+}
+
+
+#freebox div div div:nth-child(14) {
+    position: fixed;
+    left:158px;
+    top: 140px;
+    background:url(../img/remote/bleu.png) no-repeat;
+    height:34px;
+    width:43px;
+}
+
+
+#yw-forecast.night{border:1px solid #8e8e8e;border-left:none;border-right:none;background:#DFDDE2 url(http://l.yimg.com/a/i/us/nws/weather/crntcondbg_night.gif);}
+#yw-forecast em{display:block;font-size:77%;padding:10px 0 5px 10px;}
+#yw-forecast h2{color:#000;font-size:129%;font-weight:bold;padding:5px 0 5px 15px;position:relative;z-index:2;}
+#yw-forecast #yw-cond{color:#000;font-size:129%;font-weight:bold;padding:5px 0 5px 10px;position:relative;z-index:2;}
+#yw-forecast dl{color:#000;font-size:85%;padding:5px 0 14px 10px;*padding-bottom:10px;}
+#yw-forecast dt{float:left;min-width:70px;width:11.0em;}
+#yw-forecast dd{margin-bottom:2px;z-index:2;}
+#yw-forecast .forecast-temp{position:absolute;top:45px;right:0px;min-width:200px;width:200px;height:100px;background:url(../img/wdgt_day.png) no-repeat;z-index:0;}
+#yw-forecast.night .forecast-temp{background:url(../img/wdgt_night.png) no-repeat;_background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://l.yimg.com/a/i/us/nws/weather/wdgt_night.png',sizingMethod='crop');}
+#yw-forecast .forecast-temp h2{float:right;color:#fff;text-shadow:#315895 0 -1px 1px;font-weight:bold;font-size:260%;padding:5px 15px 2px 0;}
+#yw-forecast .forecast-temp #yw-temp{float:right;color:#fff;text-shadow:#315895 0 -1px 1px;font-weight:bold;font-size:260%;padding:0px 15px -1px 0;}
+#yw-forecast .forecast-temp p{clear:right;text-align:right;padding-right:17px;color:#fff;font-size:10px;text-shadow:#315895 0 -3px 1px;}
+#yw-forecast .forecast-temp ul{color:#039;list-style:none;margin:17px 0 50px 0;}
+#yw-forecast .forecast-temp ul li{line-height:1.1em;}
+#yw-forecast .forecast-temp ul a{color:#039;font-size:85%;position:relative;z-index:10;}
+#yw-forecast .forecast-icon{position:absolute;top:0;right:20px;width:230px;height:130px;background-repeat:no-repeat;}
