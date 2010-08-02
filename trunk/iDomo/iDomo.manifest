@@ -1,0 +1,26 @@
+CACHE MANIFEST
+NETWORK:
+http://w.goubs.net/
+###
+CACHE:
+index.html
+ext/ext-touch.js
+img/tabicons/home.png
+img/tabicons/favorites.png
+ext/resources/css/ext-touch.css
+css/iDomo.css
+
+src/index.js
+src/iDomo.js
+src/views/SettingsPanel.js
+src/views/RoomsPanel.js
+src/views/CustomPanel.js
+src/views/RoomsList.js
+src/views/DevicesList.js
+src/views/ControlsList.js
+src/views/CustomControl.js
+src/classes/iDomoService.js
+src/classes/utils.js
+src/data/Rooms.js
+src/data/Devices.js
+src/data/Controls.js

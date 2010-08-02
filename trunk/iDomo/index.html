@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html manifest="iDomo.manifest2">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="iDomo.png"/>
+    <title>iDomo</title>
+	<link rel="stylesheet" href="ext/resources/css/ext-touch.css" type="text/css">
+	<link rel="stylesheet" href="css/iDomo.css" type="text/css">
+	<link rel="stylesheet" href="css/custom.css" type="text/css">
+	<script type="text/javascript" src="ext/ext-touch-debug.js"></script>
+	<script type="text/javascript" src="src/index.js"></script>
+	<script type="text/javascript" src="src/iDomo.js"></script>
+	<script type="text/javascript" src="src/views/SettingsPanel.js"></script>
+	<script type="text/javascript" src="src/views/RoomsPanel.js"></script>
+	<script type="text/javascript" src="src/views/CustomPanel.js"></script>
+	<script type="text/javascript" src="src/views/RoomsList.js"></script>
+	<script type="text/javascript" src="src/views/DevicesList.js"></script>
+	<script type="text/javascript" src="src/views/ControlsList.js"></script>
+        <script type="text/javascript" src="src/views/CustomControl.js"></script>
+	<script type="text/javascript" src="src/classes/iDomoService.js"></script>
+	<script type="text/javascript" src="src/classes/utils.js"></script>
+	<script type="text/javascript" src="src/data/Rooms.js"></script>
+	<script type="text/javascript" src="src/data/Devices.js"></script>
+	<script type="text/javascript" src="src/data/Controls.js"></script>
+	<style type="text/css" media="screen">
+	   .card1 > .x-panel-body {
+	       padding: 20px;
+	       text-align: center;
+	       color: rgba(0,0,0,.5);
+	   }
+	</style>
+</head>
+<body>
+	<!--- Tpls for new style app.. -->
+	<textarea id="room-list" class="x-hidden-display">
+		<tpl for=".">        
+			<div class="room-list-item">
+			<h1>{name}</h1><!--
+                        <span>min:23°C</span>
+                        <span>max:30°C</span>
+						-->
+			</div>
+		</tpl>
+	</textarea>
+	<textarea id="device-list" class="x-hidden-display" >
+        <tpl for=".">
+			<div class="device-list-item">
+            <h1>{name}</h1>
+			</div>
+		</tpl>
+    </textarea>
+	<textarea id="control-list" class="x-hidden-display">
+        <tpl for=".">
+			<div class="control-list-item">
+            <h1>{name}</h1>
+			</div>
+		</tpl>
+    </textarea>
+	<textarea class="x-hidden-display" id="weather">
+        <tpl for=".">
+			<div id="yw-forecast" >
+			<!--
+				<em>Conditions météo à : 18h00 CEST</em>
+				<div id="yw-cond">Nuages épars</div>
+				<dl>
+					<dt>Ressenti&nbsp;:</dt><dd>29 &deg;C</dd>
+					<dt>Pression&nbsp;:</dt><dd style="position:relative;">982,05 mb et stable</dd>
+					<dt>Humidité&nbsp;:</dt><dd>70 %</dd>
+					<dt>Visibilité&nbsp;:</dt><dd>9,99 km</dd>
+					<dt>Point de rosée&nbsp;:</dt><dd>21 &#176;C</dd>
+					<dt>Vent&nbsp;:</dt><dd>E 9,66 km/h</dd>
+					<dt>Lever&nbsp;:</dt><dd>5h54</dd>
+					<dt>Coucher&nbsp;:</dt><dd>21h16</dd>
+				</dl>
+				-->
+				<div class="forecast-temp">
+					<div id="yw-temp">27&#176;</div>
+					<p>Max&nbsp;: 28&#176; Min&nbsp;: 22&#176;</p>
+				</div>
+				<div class="forecast-icon" style="background:url('http://l.yimg.com/a/i/us/nws/weather/gr/30d.png'); _background-image/* */: none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://l.yimg.com/a/i/us/nws/weather/gr/30d.png', sizingMethod='crop'); "></div>
+			</div>
+		</tpl>
+    </textarea>
+</body>
+</html>
