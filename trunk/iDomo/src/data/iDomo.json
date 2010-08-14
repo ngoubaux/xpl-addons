@@ -1,4 +1,4 @@
-({
+{
     rooms: [ 
         {zone: "Principale", key: "kitchen", name: "Cuisine", devices: [                 
             {key: "l_kitchen", name: "Spots", type: "X10Lamp", controls: [
@@ -45,7 +45,8 @@
               {key: "l_bed_1_r", name: "Reading Light", type: "X10Lamp", controls: [
                   {key: "on", name: "On", action: "ajax_call(\"ajax?args=l_bed_1_r&args=on\");"},
                   {key: "off", name: "Off", action: "ajax_call(\"ajax?args=l_bed_1_r&args=off\");"},
-              ]},                            
+              ]}, 
+        ]},                           
         {zone: "Extérieur", key: "garden", name: "Jardin", devices: [  
               {key: "l_garden", name: "Light", type: "X10Lamp", controls: [
                   {key: "on", name: "On", action: "ajax_call(\"ajax?args=l_garden&args=on\");"},
@@ -60,9 +61,9 @@
         ]},
         {zone: "syteme", key: "system", name: ".system", devices: [
            {key: "freebox_hd", name: "Freebox HD", type: "app", controls: [
-           {key: "vol_inc", name: "Vol +", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=vol_inc\");"},
-           {key: "up", name: "up", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=up\");"},
-           {key: "prgm_inc", name: "P +", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=prgm_inc\");"},
+             {key: "vol_inc", name: "Vol +", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=vol_inc\");"},
+             {key: "up", name: "up", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=up\");"},
+             {key: "prgm_inc", name: "P +", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=prgm_inc\");"},
            {key: "vol_dec", name: "Vol -", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=vol_dec\");"},
            {key: "left", name: "Left", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=left\");"},
            {key: "ok", name: "ok", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=ok\");"},
@@ -124,4 +125,4 @@
           {device: 'mb_nabaztag', control: 'off'},
      ]},
   ]
-})
+}

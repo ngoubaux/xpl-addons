@@ -3,7 +3,7 @@ NETWORK:
 http://w.goubs.net/
 ###
 CACHE:
-index.html
+#index.html
 ext/ext-touch.js
 img/tabicons/home.png
 img/tabicons/favorites.png
