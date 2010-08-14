@@ -60,7 +60,7 @@ iDomo.views.UserSetting = Ext.extend(Ext.form.FormPanel, {
 	
 	var jsonuri = localStorage.getItem("jsonuri");
 	if (!jsonuri) {
-	   jsonuri = "iDomo.json";
+	   jsonuri = "src/data/iDomo.json";
 	}
 	
 	this.setValues({
