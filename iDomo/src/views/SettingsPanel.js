@@ -58,17 +58,12 @@ iDomo.views.UserSetting = Ext.extend(Ext.form.FormPanel, {
 	
     getUserInfo: function() {
 	
-	var jsonuri = localStorage.getItem("jsonuri");
-	if (!jsonuri) {
-	   jsonuri = "src/data/iDomo.json";
-	}
+	   var jsonuri = app.GetJSONUri();
 	
-	this.setValues({
-			             auth: localStorage.getItem('auth'),
-			             jsonuri: jsonuri,
-				   //password: Get_Cookie('Password'),
-				  // shuffle: parseInt(Get_Cookie('shuffle'))
-				   });
+	   this.setValues({ 
+            auth: localStorage.getItem('auth'),
+            jsonuri: jsonuri,
+	   });
 	//this.shuffle.setValue(parseInt(Get_Cookie('shuffle'))); 
 	},
 	

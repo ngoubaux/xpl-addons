@@ -1,4 +1,4 @@
-function ajax_call(url) {
+function ajax_rcall(url) {
     
     var store = new Ext.data.JsonStore({
 
@@ -14,7 +14,7 @@ function ajax_call(url) {
     store.load();
 }
 
-function ajax_call2(url) {
+function ajax_call(url) {
 	Ext.Ajax.request({
 	   url: url,
 	   success: function(response, opts) {

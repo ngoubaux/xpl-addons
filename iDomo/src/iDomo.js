@@ -14,6 +14,15 @@ iDomo.App = Ext.extend(Ext.TabPanel, {
 	   scroll: 'vertical'
 	},
 	
+	GetJSONUri: function() {
+	
+	   var jsonuri = localStorage.getItem("jsonuri");
+	   if (!jsonuri) 
+	       jsonuri = "src/data/iDomo.json";
+	       
+	   return jsonuri;
+	},
+	
 	initComponent: function() {  
 	    this.customPanels = [];
 	    
