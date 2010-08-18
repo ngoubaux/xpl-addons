@@ -1,128 +1,542 @@
-{
-    rooms: [ 
-        {zone: "Principale", key: "kitchen", name: "Cuisine", devices: [                 
-            {key: "l_kitchen", name: "Spots", type: "X10Lamp", controls: [
-                {key: "on", name: "On", action: "ajax_call(\"ajax?args=l_kitchen&args=on\");"},
-                {key: "off", name: "Off", action: "ajax_call(\"ajax?args=l_kitchen&args=off\");"},
-                {key: "dim", name: "Dim", action: "ajax_call(\"ajax?args=l_kitchen&args=dim\");"},
-             ]},                       
-             {key: "l_kitchen_under", name: "Under Lights", type: "X10Lamp", controls: [
-                 {key: "on", name: "On", action: "ajax_call(\"ajax?args=l_kitchen_under&args=on\");"},
-                 {key: "off", name: "Off", action: "ajax_call(\"ajax?args=l_kitchen_under&args=off\");"},
-                 {key: "dim", name: "Dim", action: "ajax_call(\"ajax?args=l_kitchen_under&args=dim\");"},
-             ]},  
-        ]},
-        {zone: "Principale", key: "lounge", name: "Salon", devices: [  
-             {key: "l_lounge", name: "Light", type: "X10Lamp", controls: [
-                 {key: "on", name: "On", action: "ajax_call(\"ajax?args=l_lounge&args=on\");"},
-                 {key: "off", name: "Off", action: "ajax_call(\"ajax?args=l_lounge&args=off\");"},
-              ]},                       
-              {key: "a_tv", name: "TV", type: "X10App", controls: [
-                 {key: "on", name: "On", action: "ajax_call(\"ajax?args=a_tv&args=on\");"},
-                 {key: "off", name: "Off", action: "ajax_call(\"ajax?args=a_tv&args=off\");"},
-              ]},                       
-              {key: "mb_nabaztag", name: "Nabaztag", type: "media", controls: [
-                 {key: "on", name: "power on", action: "ajax_call(\"ajax?args=mb_nabaztag&args=on\");"},
-                 {key: "off", name: "power off", action: "ajax_call(\"ajax?args=mb_nabaztag&args=off\");"},
-              ]},                       
-              {key: "bthr918n.6d", name: "Sonde salon", type: "Sensor", controls: []},                       
-                
-        ]},
-        {zone: "Repos", key: "bath", name: "Salle de bain", devices: [  
-              {key: "l_bath", name: "Light", type: "X10Lamp", controls: [
-                  {key: "on", name: "On", action: "ajax_call(\"ajax?args=l_bath&args=on\");"},
-                  {key: "off", name: "Off", action: "ajax_call(\"ajax?args=l_bath&args=off\");"},
-                  {key: "bright", name: "Bright", action: "ajax_call(\"ajax?args=l_bath&args=bright\");"},
-              ]},                       
-              {key: "b_bath", name: "Blind", type: "Blind", controls: [
-                  {key: "close", name: "Close", action: "ajax_call(\"ajax?args=b_bath&args=close\");"},
-                  {key: "open", name: "Open", action: "ajax_call(\"ajax?args=b_bath&args=open\");"},
-              ]},                       
-              {key: "rtgr328n.42", name: "Sonde Sdb", type: "Sensor", controls: []},                       
-                
-        ]},
-        {zone: "Repos", key: "bed_1", name: "Chbr Parent", devices: [  
-              {key: "l_bed_1_r", name: "Reading Light", type: "X10Lamp", controls: [
-                  {key: "on", name: "On", action: "ajax_call(\"ajax?args=l_bed_1_r&args=on\");"},
-                  {key: "off", name: "Off", action: "ajax_call(\"ajax?args=l_bed_1_r&args=off\");"},
-              ]}, 
-        ]},                           
-        {zone: "Extérieur", key: "garden", name: "Jardin", devices: [  
-              {key: "l_garden", name: "Light", type: "X10Lamp", controls: [
-                  {key: "on", name: "On", action: "ajax_call(\"ajax?args=l_garden&args=on\");"},
-                  {key: "off", name: "Off", action: "ajax_call(\"ajax?args=l_garden&args=off\");"},
-              ]},                       
-              {key: "rtgr328n.e6", name: "Sonde jardin", type: "Sensor", controls: []},                       
-              {key: "f_garden", name: "fontaine", type: "X10App", controls: [
-                  {key: "on", name: "On", action: "ajax_call(\"ajax?args=f_garden&args=on\");"},
-                  {key: "off", name: "Off", action: "ajax_call(\"ajax?args=f_garden&args=off\");"},
-              ]},                       
-                
-        ]},
-        {zone: "syteme", key: "system", name: ".system", devices: [
-           {key: "freebox_hd", name: "Freebox HD", type: "app", controls: [
-             {key: "vol_inc", name: "Vol +", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=vol_inc\");"},
-             {key: "up", name: "up", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=up\");"},
-             {key: "prgm_inc", name: "P +", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=prgm_inc\");"},
-           {key: "vol_dec", name: "Vol -", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=vol_dec\");"},
-           {key: "left", name: "Left", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=left\");"},
-           {key: "ok", name: "ok", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=ok\");"},
-           {key: "right", name: "Right", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=right\");"},
-           {key: "prgm_dec", name: "P -", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=prgm_dec\");"},
-           {key: "down", name: "Down", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=down\");"},
-           {key: "red", name: "Rouge", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=red\");"},
-           {key: "green", name: "Green", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=green\");"},
-           {key: "yellow", name: "Yellow", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=yellow\");"},
-           {key: "blue", name: "Blue", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=blue\");"},
-           {key: "power", name: "Power", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=power\");"},
-           {key: "list", name: "List", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=list\");"},
-           {key: "tv", name: "TV", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=tv\");"},
-           {key: "back", name: "Back", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=back\");"},
-           {key: "swap", name: "Swap", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=swap\");"},
-           {key: "mute", name: "Mute", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=mute\");"},
-           {key: "home", name: "Home", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=home\");"},
-           {key: "rec", name: "rec", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=rec\");"},
-           {key: "bwd", name: "<<", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=bwd\");"},
-           {key: "prev", name: "|<<", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=prev\");"},
-           {key: "play", name: "Play", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=play\");"},
-           {key: "fwd", name: ">>", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=fwd\");"},
-           {key: "next", name: ">>|", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=next\");"},
-           {key: "info", name: "Info", action: "ajax_call(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key=info\");"},
-      ]},
-  ]},
+Ext.util.JSONP.callback ({
+  rooms: [
+    {
+      zone: "Principale",
+      key: "kitchen",
+      name: "Cuisine",
+      devices: [
+        {
+          key: "l_kitchen",
+          name: "Spots",
+          type: "X10Lamp",
+          controls: [
+            {
+              key: "on",
+              name: "On",
+              action: "ajax_call(\"ajax?args=l_kitchen&args;=on\");"
+            },
+            {
+              key: "off",
+              name: "Off",
+              action: "ajax_call(\"ajax?args=l_kitchen&args;=off\");"
+            },
+            {
+              key: "dim",
+              name: "Dim",
+              action: "ajax_call(\"ajax?args=l_kitchen&args;=dim\");"
+            },
+            
+          ]
+        },
+        {
+          key: "l_kitchen_under",
+          name: "Under Lights",
+          type: "X10Lamp",
+          controls: [
+            {
+              key: "on",
+              name: "On",
+              action: "ajax_call(\"ajax?args=l_kitchen_under&args;=on\");"
+            },
+            {
+              key: "off",
+              name: "Off",
+              action: "ajax_call(\"ajax?args=l_kitchen_under&args;=off\");"
+            },
+            {
+              key: "dim",
+              name: "Dim",
+              action: "ajax_call(\"ajax?args=l_kitchen_under&args;=dim\");"
+            },
+            
+          ]
+        },
+        
+      ]
+    },
+    {
+      zone: "Principale",
+      key: "lounge",
+      name: "Salon",
+      devices: [
+        {
+          key: "l_lounge",
+          name: "Light",
+          type: "X10Lamp",
+          controls: [
+            {
+              key: "on",
+              name: "On",
+              action: "ajax_call(\"ajax?args=l_lounge&args;=on\");"
+            },
+            {
+              key: "off",
+              name: "Off",
+              action: "ajax_call(\"ajax?args=l_lounge&args;=off\");"
+            },
+            
+          ]
+        },
+        {
+          key: "a_tv",
+          name: "TV",
+          type: "X10App",
+          controls: [
+            {
+              key: "on",
+              name: "On",
+              action: "ajax_call(\"ajax?args=a_tv&args;=on\");"
+            },
+            {
+              key: "off",
+              name: "Off",
+              action: "ajax_call(\"ajax?args=a_tv&args;=off\");"
+            },
+            
+          ]
+        },
+        {
+          key: "mb_nabaztag",
+          name: "Nabaztag",
+          type: "media",
+          controls: [
+            {
+              key: "on",
+              name: "power on",
+              action: "ajax_call(\"ajax?args=mb_nabaztag&args;=on\");"
+            },
+            {
+              key: "off",
+              name: "power off",
+              action: "ajax_call(\"ajax?args=mb_nabaztag&args;=off\");"
+            },
+            
+          ]
+        },
+        {
+          key: "bthr918n.6d",
+          name: "Sonde salon",
+          type: "Sensor",
+          controls: [
+            
+          ]
+        },
+        
+      ]
+    },
+    {
+      zone: "Repos",
+      key: "bath",
+      name: "Salle de bain",
+      devices: [
+        {
+          key: "l_bath",
+          name: "Light",
+          type: "X10Lamp",
+          controls: [
+            {
+              key: "on",
+              name: "On",
+              action: "ajax_call(\"ajax?args=l_bath&args;=on\");"
+            },
+            {
+              key: "off",
+              name: "Off",
+              action: "ajax_call(\"ajax?args=l_bath&args;=off\");"
+            },
+            {
+              key: "bright",
+              name: "Bright",
+              action: "ajax_call(\"ajax?args=l_bath&args;=bright\");"
+            },
+            
+          ]
+        },
+        {
+          key: "b_bath",
+          name: "Blind",
+          type: "Blind",
+          controls: [
+            {
+              key: "close",
+              name: "Close",
+              action: "ajax_call(\"ajax?args=b_bath&args;=close\");"
+            },
+            {
+              key: "open",
+              name: "Open",
+              action: "ajax_call(\"ajax?args=b_bath&args;=open\");"
+            },
+            
+          ]
+        },
+        {
+          key: "rtgr328n.42",
+          name: "Sonde Sdb",
+          type: "Sensor",
+          controls: [
+            
+          ]
+        },
+        
+      ]
+    },
+    {
+      zone: "Repos",
+      key: "bed_1",
+      name: "Chbr Parent",
+      devices: [
+        {
+          key: "l_bed_1_r",
+          name: "Reading Light",
+          type: "X10Lamp",
+          controls: [
+            {
+              key: "on",
+              name: "On",
+              action: "ajax_call(\"ajax?args=l_bed_1_r&args;=on\");"
+            },
+            {
+              key: "off",
+              name: "Off",
+              action: "ajax_call(\"ajax?args=l_bed_1_r&args;=off\");"
+            },
+            
+          ]
+        },
+        
+      ]
+    },
+    {
+      zone: "Extérieur",
+      key: "garden",
+      name: "Jardin",
+      devices: [
+        {
+          key: "l_garden",
+          name: "Light",
+          type: "X10Lamp",
+          controls: [
+            {
+              key: "on",
+              name: "On",
+              action: "ajax_call(\"ajax?args=l_garden&args;=on\");"
+            },
+            {
+              key: "off",
+              name: "Off",
+              action: "ajax_call(\"ajax?args=l_garden&args;=off\");"
+            },
+            
+          ]
+        },
+        {
+          key: "rtgr328n.e6",
+          name: "Sonde jardin",
+          type: "Sensor",
+          controls: [
+            
+          ]
+        },
+        {
+          key: "f_garden",
+          name: "fontaine",
+          type: "X10App",
+          controls: [
+            {
+              key: "on",
+              name: "On",
+              action: "ajax_call(\"ajax?args=f_garden&args;=on\");"
+            },
+            {
+              key: "off",
+              name: "Off",
+              action: "ajax_call(\"ajax?args=f_garden&args;=off\");"
+            },
+            
+          ]
+        },
+        
+      ]
+    },
+    {
+      zone: "syteme",
+      key: "system",
+      name: ".system",
+      devices: [
+        {
+          key: "freebox_hd",
+          name: "Freebox HD",
+          type: "app",
+          controls: [
+            {
+              key: "vol_inc",
+              name: "Vol +",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=vol_inc\");"
+            },
+            {
+              key: "up",
+              name: "up",
+              action: "ajax_rcallajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=up\");"
+            },
+            {
+              key: "prgm_inc",
+              name: "P +",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=prgm_inc\");"
+            },
+            {
+              key: "vol_dec",
+              name: "Vol -",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=vol_dec\");"
+            },
+            {
+              key: "left",
+              name: "Left",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=left\");"
+            },
+            {
+              key: "ok",
+              name: "ok",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=ok\");"
+            },
+            {
+              key: "right",
+              name: "Right",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=right\");"
+            },
+            {
+              key: "prgm_dec",
+              name: "P -",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=prgm_dec\");"
+            },
+            {
+              key: "down",
+              name: "Down",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=down\");"
+            },
+            {
+              key: "red",
+              name: "Rouge",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=red\");"
+            },
+            {
+              key: "green",
+              name: "Green",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=green\");"
+            },
+            {
+              key: "yellow",
+              name: "Yellow",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=yellow\");"
+            },
+            {
+              key: "blue",
+              name: "Blue",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=blue\");"
+            },
+            {
+              key: "power",
+              name: "Power",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=power\");"
+            },
+            {
+              key: "list",
+              name: "List",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=list\");"
+            },
+            {
+              key: "tv",
+              name: "TV",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=tv\");"
+            },
+            {
+              key: "back",
+              name: "Back",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=back\");"
+            },
+            {
+              key: "swap",
+              name: "Swap",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=swap\");"
+            },
+            {
+              key: "mute",
+              name: "Mute",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=mute\");"
+            },
+            {
+              key: "home",
+              name: "Home",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=home\");"
+            },
+            {
+              key: "rec",
+              name: "rec",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=rec\");"
+            },
+            {
+              key: "bwd",
+              name: "<<",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=bwd\");"
+            },
+            {
+              key: "prev",
+              name: "|<<",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=prev\");"
+            },
+            {
+              key: "play",
+              name: "Play",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=play\");"
+            },
+            {
+              key: "fwd",
+              name: ">>",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=fwd\");"
+            },
+            {
+              key: "next",
+              name: ">>|",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=next\");"
+            },
+            {
+              key: "info",
+              name: "Info",
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=info\");"
+            },
+            
+          ]
+        },
+        
+      ]
+    },
+    
   ],
   panels: [
-     { name: 'freebox', controls:  [
-          { device: 'freebox_hd', control: 'red'},
-          { device: 'freebox_hd', control: 'green'},
-          { device: 'freebox_hd', control: 'blue'},
-          { device: 'freebox_hd', control: 'yellow'},
-          { device: 'freebox_hd', control: 'power'},
-          { device: 'freebox_hd', control: 'tv'},
-          { device: 'freebox_hd', control: 'vol_inc'},
-          { device: 'freebox_hd', control: 'vol_dec'},
-          { device: 'freebox_hd', control: 'prgm_inc'},
-          { device: 'freebox_hd', control: 'prgm_dec'},
-          { device: 'freebox_hd', control: 'up'},
-          { device: 'freebox_hd', control: 'ok'},
-          { device: 'freebox_hd', control: 'right'},
-          { device: 'freebox_hd', control: 'down'},
-          { device: 'freebox_hd', control: 'left'},
-          { device: 'freebox_hd', control: 'mute'},
-          { device: 'freebox_hd', control: 'home'},
-          { device: 'freebox_hd', control: 'rec'},
-          { device: 'freebox_hd', control: 'play'},
-          { device: 'freebox_hd', control: 'info'},
-     ]},
-     { name: 'Gilcor', controls: [ 
-          {device: 'l_lounge', control: 'on'}, 
-          {device: 'l_lounge', control: 'off'}, 
-          {device: 'f_garden', control: 'on'}, 
-          {device: 'f_garden', control: 'off'}, 
-          {device: 'a_tv', control: 'on'}, 
-          {device: 'a_tv', control: 'off'}, 
-          {device: 'mb_nabaztag', control: 'on'}, 
-          {device: 'mb_nabaztag', control: 'off'},
-     ]},
+    {
+      name: 'freebox',
+      controls: [
+        {
+          device: 'freebox_hd',
+          control: 'red'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'green'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'blue'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'yellow'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'power'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'tv'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'vol_inc'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'vol_dec'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'prgm_inc'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'prgm_dec'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'up'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'ok'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'right'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'down'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'left'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'mute'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'home'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'rec'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'play'
+        },
+        {
+          device: 'freebox_hd',
+          control: 'info'
+        },
+        
+      ]
+    },
+    {
+      name: 'Gilcor',
+      controls: [
+        {
+          device: 'l_lounge',
+          control: 'on'
+        },
+        {
+          device: 'l_lounge',
+          control: 'off'
+        },
+        {
+          device: 'f_garden',
+          control: 'on'
+        },
+        {
+          device: 'f_garden',
+          control: 'off'
+        },
+        {
+          device: 'a_tv',
+          control: 'on'
+        },
+        {
+          device: 'a_tv',
+          control: 'off'
+        },
+        {
+          device: 'mb_nabaztag',
+          control: 'on'
+        },
+        {
+          device: 'mb_nabaztag',
+          control: 'off'
+        },
+        
+      ]
+    },
+    
   ]
-}
+})

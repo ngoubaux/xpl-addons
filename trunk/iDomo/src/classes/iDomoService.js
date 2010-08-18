@@ -142,7 +142,7 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 	loadFromJSON: function(cb, scope) {
 	   this.onCreateTables();
 	   Ext.util.JSONP.request({
-			url: localStorage.getItem('jsonuri'),
+			url: app.GetJSONUri(),
 			callbackKey: 'callback',
 			scope: scope,
 			params: {auth: localStorage.getItem('auth')},
