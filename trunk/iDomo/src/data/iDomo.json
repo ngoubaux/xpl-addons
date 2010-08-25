@@ -272,139 +272,154 @@ Ext.util.JSONP.callback ({
             {
               key: "vol_inc",
               name: "Vol +",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=vol_inc\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=vol_inc\");"
             },
             {
               key: "up",
               name: "up",
-              action: "ajax_rcallajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=up\");"
+              action: "ajax_rcallajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=up\");"
             },
             {
               key: "prgm_inc",
               name: "P +",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=prgm_inc\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=prgm_inc\");"
             },
             {
               key: "vol_dec",
               name: "Vol -",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=vol_dec\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=vol_dec\");"
             },
             {
               key: "left",
               name: "Left",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=left\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=left\");"
             },
             {
               key: "ok",
               name: "ok",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=ok\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=ok\");"
             },
             {
               key: "right",
               name: "Right",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=right\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=right\");"
             },
             {
               key: "prgm_dec",
               name: "P -",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=prgm_dec\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=prgm_dec\");"
             },
             {
               key: "down",
               name: "Down",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=down\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=down\");"
             },
             {
               key: "red",
               name: "Rouge",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=red\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=red\");"
             },
             {
               key: "green",
               name: "Green",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=green\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=green\");"
             },
             {
               key: "yellow",
               name: "Yellow",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=yellow\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=yellow\");"
             },
             {
               key: "blue",
               name: "Blue",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=blue\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=blue\");"
             },
             {
               key: "power",
               name: "Power",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=power\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=power\");"
             },
             {
               key: "list",
               name: "List",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=list\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=list\");"
             },
             {
               key: "tv",
               name: "TV",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=tv\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=tv\");"
             },
             {
               key: "back",
               name: "Back",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=back\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=back\");"
             },
             {
               key: "swap",
               name: "Swap",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=swap\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=swap\");"
             },
             {
               key: "mute",
               name: "Mute",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=mute\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=mute\");"
             },
             {
               key: "home",
               name: "Home",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=home\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=home\");"
             },
             {
               key: "rec",
               name: "rec",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=rec\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=rec\");"
             },
             {
               key: "bwd",
               name: "<<",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=bwd\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=bwd\");"
             },
             {
               key: "prev",
               name: "|<<",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=prev\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=prev\");"
             },
             {
               key: "play",
               name: "Play",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=play\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=play\");"
             },
             {
               key: "fwd",
               name: ">>",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=fwd\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=fwd\");"
             },
             {
               key: "next",
               name: ">>|",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=next\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=next\");"
             },
             {
               key: "info",
               name: "Info",
-              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845694&key;=info\");"
+              action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key;=info\");"
             },
             
+           {key: "pip", name: "Pip", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=pip\");"},
+           {key: "mail", name: "mail", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=mail\");"},
+           {key: "epg", name: "epg", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=epg\");"},
+           {key: "media", name: "media", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=media\");"},
+           {key: "options", name: "Options", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=options\");"},
+           {key: "0", name: "0", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=0\");"},
+           {key: "1", name: "1", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=1\");"},
+           {key: "2", name: "2", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=2\");"},
+           {key: "3", name: "3", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=3\");"},
+           {key: "4", name: "4", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=4\");"},
+           {key: "5", name: "5", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=5\");"},
+           {key: "6", name: "6", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=6\");"},
+           {key: "7", name: "7", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=7\");"},
+           {key: "8", name: "8", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=8\");"},
+           {key: "9", name: "9", action: "ajax_rcall(\"http://hd1.freebox.fr/pub/remote_control?code=39845004&key=9\");"},
           ]
         },
         
@@ -497,6 +512,27 @@ Ext.util.JSONP.callback ({
           control: 'info'
         },
         
+          { device: 'freebox_hd', control: '0'},
+          { device: 'freebox_hd', control: '1'},
+          { device: 'freebox_hd', control: '2'},
+          { device: 'freebox_hd', control: '3'},
+          { device: 'freebox_hd', control: '4'},
+          { device: 'freebox_hd', control: '5'},
+          { device: 'freebox_hd', control: '6'},
+          { device: 'freebox_hd', control: '7'},
+          { device: 'freebox_hd', control: '8'},
+          { device: 'freebox_hd', control: '9'},
+          { device: 'freebox_hd', control: 'back'},
+          { device: 'freebox_hd', control: 'swap'},
+          { device: 'freebox_hd', control: 'bwd'},
+          { device: 'freebox_hd', control: 'prev'},
+          { device: 'freebox_hd', control: 'fwd'},
+          { device: 'freebox_hd', control: 'next'},
+          { device: 'freebox_hd', control: 'mail'},
+          { device: 'freebox_hd', control: 'pip'},
+          { device: 'freebox_hd', control: 'epg'},
+          { device: 'freebox_hd', control: 'media'},
+          { device: 'freebox_hd', control: 'options'},
       ]
     },
     {

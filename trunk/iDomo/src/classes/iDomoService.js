@@ -131,7 +131,8 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 	create_panelControls_table: function() {
 		this.systemDB.transaction(function(tx) {
 			 tx.executeSql(' CREATE TABLE IF NOT EXISTS panels_controls ' +
-						   '   (panel_id INTEGER NOT NULL, ' +
+						   '   (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ' +
+						   '    panel_id INTEGER NOT NULL, ' +
 						   '    control_id INTEGER NOT NULL); '
 						   , [], 
 						   function(tx, result) {}, 
@@ -344,7 +345,7 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 	loadControlPanels: function(cb, scope) {
 	   this.systemDB.transaction(function(tx) {
 	       tx.executeSql(
-               "SELECT panel_id, control_id FROM panels_controls ORDER BY panel_id, control_id ASC", [], 
+               "SELECT panel_id, control_id FROM panels_controls ORDER BY panel_id, id, control_id ASC", [], 
 	           function(tx, result) {
 			     
 			     for (i = 0; i < result.rows.length; i++) {
