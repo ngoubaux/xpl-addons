@@ -71,3 +71,48 @@ border:1px solid #5182ce;border-left:none;border-right:none;
 	top: 20px;
 	vertical-align: middle;	
 }
+
+.control-list-item img {
+  //width: 100%
+}
+
+.room-list-item {
+    height: 50px;
+}    
+
+.room_name {
+    float: left;
+    width:160px;
+}
+
+.device_state {
+    float: right;
+    right: 0px;
+    width: 55px;
+}
+
+.room-list-item .temp {
+   float: right;
+   right: 0px;
+   width: 55px;
+}
+
+.cls {
+  display: none;
+}
+
+.room-list-item .temp:before, .temp .device_state:before {
+    content:url(../img/promo_orange_12.png) no-repeat;
+    height: 12px;
+}
+
+.room-list-item .humidity {
+   float: right;
+   right: 0px;
+   width: 55px;
+}
+
+.room-list-item .humidity:before, .humidity .device_state:before {
+    content:url(../img/promotion_12.png) no-repeat;
+    height: 12px;
+}

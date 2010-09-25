@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html manifest="iDomo.manifest2" xmlns="http://www.w3.org/1999/xhtml">
+<html manifest="iDomo.manifest" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
@@ -40,24 +40,25 @@
 	<textarea id="room-list" class="x-hidden-display">
 		<tpl for=".">        
 			<div class="room-list-item">
-			<h1>{name}</h1><!--
-                        <span>min:23°C</span>
-                        <span>max:30°C</span>
-						-->
+			  <div class="room_name">{name}</div>
+              <div class="humidity {humidity_cls}">{humidity}</div>
+              <div class="temp {temp_cls}">{temp}</div>
 			</div>
 		</tpl>
 	</textarea>
 	<textarea id="device-list" class="x-hidden-display" >
         <tpl for=".">
-			<div class="device-list-item">
-            <h1>{name}</h1>
+			<div class="device-list-item {type}">
+                <div class="device_name">{name}</div>
+                <div class="device_state">{state}</div>
 			</div>
 		</tpl>
     </textarea>
 	<textarea id="control-list" class="x-hidden-display">
         <tpl for=".">
 			<div class="control-list-item">
-            <h1>{name}</h1>
+            <h1 class="{name_cls}">{name}</h1>
+            <img class="{img_cls}" src="{action}"/>
 			</div>
 		</tpl>
     </textarea>

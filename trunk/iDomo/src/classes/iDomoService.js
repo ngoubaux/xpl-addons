@@ -95,7 +95,8 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 						  '    room_id INTEGER NOT NULL, ' +
 						  '    type TEXT NOT NULL, ' +
 						  '    name TEXT NOT NULL, ' +
-						  '    key TEXT NOT NULL);'
+						  '    key TEXT NOT NULL,  ' +
+						  '    state TEXT NOT NULL);'
 						  , [], 
 						  function(tx, result) {}, 
 						  this.errorHandler);
@@ -161,6 +162,9 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 			    var room = rooms[i];
 			    iDomo.Service.rooms.push(room);
 				room["id"] = i + 1;
+				
+			    room.temp_cls = "cls";
+			    room.humidity_cls = "cls";
 			    
 			    iDomo.Service.create_room(room);
 				
@@ -172,6 +176,16 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 			      device.id = iDomo.Service.devices.length;
 			      device.room = room;
 			      
+			      if (device.type == "temp") {
+        		    room.temp = device.state + "°";
+        		    room.temp_cls = "";
+			      }
+			      
+        	      if (device.type == "humidity") {
+        			room.humidity = device.state + "%";
+        			room.humidity_cls = "";
+        	      }
+			      
 			      iDomo.Service.create_device(device);
 			
 				  var controls = device["controls"];
@@ -180,12 +194,16 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 					
 				    iDomo.Service.controls.push(control);
 					
+					control.img_cls = "cls";
+					if (device.type == "pressure" || device.type == "battery" || 
+					    device.type == "temp" || device.type == "humidity")
+					   control.img_cls = "";
+					   
 					control["id"] = iDomo.Service.controls.length;
 					control["device"] = device;
 					
 					iDomo.Service.create_control(control);
 				  }
-			
 			    }
 		 	  }
 		 	  
@@ -223,6 +241,73 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 	   });
      },
      
+    updateStateFromJSON: function(cb, scope) {
+	   this.onCreateTables();
+	   Ext.util.JSONP.request({
+			url: app.GetJSONUri(),
+			callbackKey: 'callback',
+			scope: scope,
+			params: {auth: localStorage.getItem('auth'), state: 1},
+			callback: function(data) {
+			  
+			  rooms = data.rooms;
+			
+			  /* Add Room to the toolbar */
+			  for (var i = 0; i < rooms.length; i++) {
+			      var jRoom = rooms[i];
+			    
+		          var room = iDomo.Service.getRoomByKey(jRoom.key);
+				  if (room) {
+			         room.data.temp_cls = "cls";
+			         room.data.humidity_cls = "cls";
+			    
+				    var devices = jRoom["devices"];
+    			    for (var j = 0; j < devices.length; j++) {
+    			      var jDevice = devices[j];
+    			      
+    			      var device = iDomo.Service.getDeviceByKey(jDevice.key);
+    			      device.state = jDevice.state;
+    			      
+    			      if (jDevice.type == "temp") {
+            		    room.data.temp = jDevice.state + "°";
+            		    room.data.temp_cls = "";
+    			      }
+    			      
+            	      if (jDevice.type == "humidity") {
+            			room.data.humidity = jDevice.state + "%";
+            			room.data.humidity_cls = "";
+            	      }
+            	      iDomo.Service.update_device(device);
+            	      
+            	      var controls = jDevice["controls"];
+    				  for (var k = 0; k < controls.length; k++) {
+    					var jControl = controls[k];
+    					
+    					var control = iDomo.Service.getControlByKey(device, jControl.key);
+    					if (control) {
+    				        control.img_cls = "";
+    				        control.name_cls = "cls";
+    					    control.action = jControl.action;
+    					}
+    					iDomo.Service.update_control(control);
+    				  }
+    			    }
+				  }
+		 	  }
+		 	
+		      cb.call(scope || window, iDomo.Service);
+	  	  }
+	   });
+     },
+     
+    getRoomByKey: function (key) {
+        for (var i = 0; i < iDomo.Service.rooms.length; i++) {
+            var room = iDomo.Service.rooms[i];
+            if (key == room["key"])
+                return room;
+        }
+    },
+    
     getControlByKey: function (device, key) {
         for (var i = 0; i < device["controls"].length; i++) {
             var control = device["controls"][i];
@@ -249,13 +334,20 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 			tx.executeSql("SELECT id, name, key FROM rooms ORDER BY id ASC", [], 
 			  function(tx, result) {
 				
-						  for (i = 0; i < result.rows.length; i++) {
-							var row = result.rows.item(i);
-							iDomo.Service.rooms[i] = {id: row.id, name: row.name, key: row.key};
-						    iDomo.Service.rooms[i]["devices"] = new Array();
-						  }
-						  
-						  iDomo.Service.loadRoomsDevices(cb, scope);
+    			  for (i = 0; i < result.rows.length; i++) {
+    				var row = result.rows.item(i);
+    				iDomo.Service.rooms[i] = {
+    				  id: row.id, 
+    				  name: row.name, 
+    				  key: row.key,
+    				  temp_cls: "cls",
+    				  humidity_cls: "cls"
+    				};
+    				   
+    			    iDomo.Service.rooms[i]["devices"] = new Array();
+    			  }
+    			  
+    			  iDomo.Service.loadRoomsDevices(cb, scope);
 			  }
 		   );
 		 }
@@ -265,7 +357,7 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 	loadRoomsDevices: function (cb, scope) {
 	   this.systemDB.transaction(function(tx) {
 	       tx.executeSql(
-			    "SELECT id, room_id, type, name, key FROM devices ORDER BY room_id, id ASC", [], 
+			    "SELECT id, room_id, type, name, key, state FROM devices ORDER BY room_id, id ASC", [], 
 				function(tx, result) {
 				
         			for (i = 0; i < result.rows.length; i++) {
@@ -273,14 +365,24 @@ iDomo.ServiceImpl = Ext.extend(Object, {
         			var room = iDomo.Service.rooms[row.room_id - 1];
         			if (room) {
         			     var device = {
-        			             id: row.id, 
-        			             room: room, 
-        			             type: row.type, 
-        			             name: row.name, 
-        			             key: row.key, 
-        			             controls: new Array()
+    			             id: row.id, 
+    			             room: room, 
+    			             type: row.type, 
+    			             name: row.name, 
+    			             key: row.key, 
+    			             state: row.state,
+    			             controls: new Array()
         			     }; 
         			
+        			     if (device.type == "temp") { 
+        			         room.temp = device.state + "°";
+        			         room.temp_cls = "";
+        			     }
+        			     if (device.type == "humidity") {
+        			         room.humidity = device.state + "%";
+        			         room.humidity_cls = "";
+        			     }
+        			         
         			     iDomo.Service.devices.push(device);
         			     room["devices"].push(device);
         			}
@@ -306,8 +408,15 @@ iDomo.ServiceImpl = Ext.extend(Object, {
               				            device: device, 
               				            action: row.action, 
               				            name: row.name, 
-              				            key: row.key};
-              				            
+              				            key: row.key,
+              				            img_cls: "cls"};
+              				      
+					              if (device.type == "pressure" || device.type == "battery" || 
+					                  device.type == "temp" || device.type == "humidity") {
+					                control.img_cls = "";
+					                control.name_cls = "cls";
+					              }
+					         
               				      iDomo.Service.controls.push(control);
               				      device["controls"].push(control);          
         				    }
@@ -417,12 +526,36 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 		var type   = device["type"];
 		var name   = device["name"];
 		var key    = device["key"];
+		var state  = device["state"];
 		
 		this.systemDB.transaction(
 			 function(transaction) {
 			     transaction.executeSql(
-						'INSERT INTO devices (room_id, type, name, key) VALUES (?, ?, ?, ?);', 
-						[roomID, type, name, key], 
+						'INSERT INTO devices (room_id, type, name, key, state) VALUES (?, ?, ?, ?, ?);', 
+						[roomID, type, name, key, state], 
+						function(tx, results){
+						//alert('insert ID is'+results.insertId);//load_Tabpanel();
+						}, 
+						this.errorHandler
+						);
+			 }
+	    );
+		return false;
+	},
+	
+	update_device: function(device)
+	{
+	   if (!device.id)
+	       return;
+	       
+		var id = device.id;
+		var state  = device["state"];
+		
+		this.systemDB.transaction(
+			 function(transaction) {
+			     transaction.executeSql(
+						'UPDATE devices SET state = ? WHERE id = ?', 
+						[state, id], 
 						function(tx, results){
 						//alert('insert ID is'+results.insertId);//load_Tabpanel();
 						}, 
@@ -450,6 +583,29 @@ iDomo.ServiceImpl = Ext.extend(Object, {
 				}, 
 				this.errorHandler
 				);
+			 }
+	    );
+		return false;
+	},
+	
+	update_control: function(control)
+	{
+	   if (!control.id)
+	       return;
+	       
+		var id = control.id;
+		var action  = control["action"];
+		
+		this.systemDB.transaction(
+			 function(transaction) {
+			     transaction.executeSql(
+						'UPDATE controls SET action = ? WHERE id = ?', 
+						[action, id], 
+						function(tx, results){
+						//alert('insert ID is'+results.insertId);//load_Tabpanel();
+						}, 
+						this.errorHandler
+						);
 			 }
 	    );
 		return false;

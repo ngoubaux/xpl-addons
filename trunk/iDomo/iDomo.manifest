@@ -1,15 +1,26 @@
 CACHE MANIFEST
 NETWORK:
-http://w.goubs.net/
+http://w.goubs.net/json/iDomo.json
+http://chart.apis.google.com/
+index.html
+
 ###
 CACHE:
 #index.html
+## Extern
 ext/ext-touch.js
+ext/resources/css/ext-touch.css
+
+## Images
 img/tabicons/home.png
 img/tabicons/favorites.png
-ext/resources/css/ext-touch.css
+img/promo_orange_12.png
+img/promotion_12.png
+
+## CSS
 css/iDomo.css
 
+## Script
 src/index.js
 src/iDomo.js
 src/views/SettingsPanel.js
