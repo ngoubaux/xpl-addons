@@ -63,9 +63,9 @@ iDomo.views.RoomsPanel = Ext.extend(Ext.Panel, {
 	           title:'Controls'
 	   });
 	
-	       this.items = [this.Roomlist, this.DeviceList, this.ControlList];
-	       iDomo.views.RoomsPanel.superclass.initComponent.call(this);
-	       this.Roomlist.on('itemtap', this.onRoomItemTap, this);
+	     this.items = [this.Roomlist, this.DeviceList, this.ControlList];
+	     iDomo.views.RoomsPanel.superclass.initComponent.call(this);
+	     this.Roomlist.on('itemtap', this.onRoomItemTap, this);
 	     this.DeviceList.on('itemtap', this.onDeviceItemTap, this);
 	     this.ControlList.on('itemtap', this.onControlItemTap, this);
 	 
@@ -133,8 +133,6 @@ iDomo.views.RoomsPanel = Ext.extend(Ext.Panel, {
 	 //this.toolbar.setTitle("Pieces");
 	this.isLoaded = true;
 	Ext.getBody().unmask();
-       iDomo.stores.Rooms.loadData(rooms);
-	
-	
+    iDomo.stores.Rooms.loadData(rooms);
     }
  });

@@ -24,6 +24,17 @@ iDomo.views.UserSetting = Ext.extend(Ext.form.FormPanel, {
                      app.loadConfiguration();
        }
     });
+    
+    this.UpdateCache = new Ext.Button({
+       name: 'Update',
+       text:'Update',
+       handler: function() { 
+          var appCache = window.applicationCache
+          if (appCache.status == appCache.UPDATEREADY ){
+              appCache.swapCache()
+          }
+       }
+    });
      
     this.fsProfile = new Ext.form.FieldSet({
        title: 'profile',
@@ -33,7 +44,7 @@ iDomo.views.UserSetting = Ext.extend(Ext.form.FormPanel, {
     
     this.fsPreference = new Ext.form.FieldSet({
       title:'preferences',
-      items: [this.jsonUri, this.resetDB]
+      items: [this.jsonUri, this.resetDB, this.UpdateCache]
     });
     
     this.items = [this.fsProfile,this.fsPreference];

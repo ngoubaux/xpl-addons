@@ -19,7 +19,7 @@ iDomo.App = Ext.extend(Ext.TabPanel, {
 	   var jsonuri = localStorage.getItem("jsonuri");
 	   if (!jsonuri) 
 	       jsonuri = "src/data/iDomo.json";
-	       
+	   
 	   return jsonuri;
 	},
 	
@@ -108,6 +108,12 @@ iDomo.App = Ext.extend(Ext.TabPanel, {
 	onLoadConfiguration: function (resp) {
 	   this.roomsPanel.loadRoomsStore(resp.rooms);
 	   this.loadCustomPanels(resp.panels);
+	   iDomo.Service.updateStateFromJSON(this.onUpdateState, this);
+	},
+	
+	onUpdateState: function (resp) {
+	   this.roomsPanel.loadRoomsStore(resp.rooms);
+	   this.roomsPanel.Roomlist.refresh();
 	},
 	
 	loadCustomPanels: function (panels) {

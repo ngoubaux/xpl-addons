@@ -7,6 +7,10 @@ Ext.regModel('Rooms', {
 					  // basic info
 					  'name',
 					  'zone',
+					  'temp',
+					  'temp_cls',
+					  'humidity',
+					  'humidity_cls'
 					  ]
 			 });
 

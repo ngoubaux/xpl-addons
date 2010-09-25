@@ -6,6 +6,8 @@ Ext.regModel('Controls', {
 					  'action',
 					  // basic info
 					  'name',
+					  'img_cls',
+					  'name_cls',
 					  ]
 			 });
 

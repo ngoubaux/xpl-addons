@@ -1,0 +1,418 @@
+#freebox .device {
+    display: none;
+}
+
+#freebox .customcontrol:nth-child(2n) .control  {
+    margin-top: 0px;
+}
+
+#freebox .customcontrol {
+    border: 0px;
+    margin: 0px;
+}
+
+#freebox {
+    background: black;
+}
+
+#freebox div div div.customcontrol {
+    background: black;
+    position: fixed;
+    -webkit-border-radius: 8px;
+    -webkit-box-shadow: rgba(255,255,255,.3) 1px 1px 3px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1e1f21), to(#272729));
+    height: 34px;
+    width: 44px;
+}
+
+#freebox div div div .control {
+    display: block;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    background: none;
+    color: white;
+    height:100%; 
+    width:100%;
+    top: 5px;
+    text-shadow: rgba(255,255,255,.8) 0 1px 0;
+}
+
+#freebox div div div .red,
+#freebox div div div .green,
+#freebox div div div .blue,
+#freebox div div div .yellow,
+#freebox div div div .vol_dec,
+#freebox div div div .vol_inc,
+#freebox div div div .up,
+#freebox div div div .down,
+#freebox div div div .prgm_dec,
+#freebox div div div .prgm_inc,
+#freebox div div div .left,
+#freebox div div div .right,
+/*#freebox div div div .ok, */
+#freebox div div div .mute,
+#freebox div div div .rec,
+#freebox div div div .play,
+#freebox div div div .bwd,
+#freebox div div div .prev,
+#freebox div div div .fwd,
+#freebox div div div .next,
+#freebox div div div .power{
+    display: none;
+}
+
+#freebox div div div.customcontrol:nth-child(1),
+#freebox div div div.customcontrol:nth-child(2),
+#freebox div div div.customcontrol:nth-child(3),
+#freebox div div div.customcontrol:nth-child(4) {
+    position: fixed;
+    left: 60px;
+    top: 5px;
+    -webkit-border-radius: 8px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff005e), to(#b30045));
+    -webkit-box-shadow: rgba(255,255,255,.3) 1px 1px 3px;
+    height:34px;
+    width:44px;
+}
+
+#freebox div div div.customcontrol:nth-child(2) {
+    left:109px;
+    -webkit-border-radius: 8px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00ff6f), to(#42b300));
+    -webkit-box-shadow: rgba(255,255,255,.3) 1px 1px 3px;
+}
+
+#freebox div div div.customcontrol:nth-child(3) {
+    left:158px;
+    -webkit-border-radius: 8px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#005eff), to(#0033b3));
+    -webkit-box-shadow: rgba(255,255,255,.3) 1px 1px 3px;
+}
+
+#freebox div div div.customcontrol:nth-child(4) {
+    left:207px;
+    -webkit-border-radius: 8px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f7ff00), to(#b3b300));
+    -webkit-box-shadow: rgba(255,255,255,.3) 1px 1px 3px;
+}
+
+#freebox div div div.customcontrol:nth-child(5),
+#freebox div div div.customcontrol:nth-child(16) {
+    background-size: 32px 32px;
+    left:10px;
+    top: 5px;
+    height:34px;
+    width:43px;
+}
+
+#freebox div div div.customcontrol:nth-child(16) {
+    left: 256px;
+}
+
+#freebox div div div.customcontrol:nth-child(5):after,
+#freebox div div div.customcontrol:nth-child(16):after {
+    background:url(../img/remote/power.png) no-repeat;
+    height: 32px;
+    width: 32px;
+    content:"";
+    display: block;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+#freebox div div div.customcontrol:nth-child(16):after {
+    background:url(../img/remote/mute.png) no-repeat;
+}
+
+#freebox div div div.customcontrol:nth-child(6) .control,
+#freebox div div div.customcontrol:nth-child(17) .control,
+#freebox div div div.customcontrol:nth-child(20) .control,
+#freebox div div div.customcontrol:nth-child(31) .control,
+#freebox div div div.customcontrol:nth-child(32) .control, 
+#freebox div div div.customcontrol:nth-child(37) .control, 
+#freebox div div div.customcontrol:nth-child(38) .control, 
+#freebox div div div.customcontrol:nth-child(39) .control, 
+#freebox div div div.customcontrol:nth-child(40) .control, 
+#freebox div div div.customcontrol:nth-child(41) .control {
+    text-shadow: rgba(0,0,0,.2) 1px 2px 1px;
+}
+
+#freebox div div div.customcontrol:nth-child(31) .control, 
+#freebox div div div.customcontrol:nth-child(32) .control {
+    top: 10px;
+    font-size: 0.75em;
+}
+
+#freebox div div div.customcontrol:nth-child(6),
+#freebox div div div.customcontrol:nth-child(17),
+#freebox div div div.customcontrol:nth-child(20),
+#freebox div div div.customcontrol:nth-child(37),
+#freebox div div div.customcontrol:nth-child(38),
+#freebox div div div.customcontrol:nth-child(39),
+#freebox div div div.customcontrol:nth-child(40),
+#freebox div div div.customcontrol:nth-child(41)  {
+    position: fixed;
+    top: 325px;
+    left: 35px;
+    font-size: 0.80em;
+    -webkit-border-radius: 8px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0a69c7), to(#2f8bd6));
+    -webkit-box-shadow: rgba(255,255,255,.3) 1px 1px 3px;   
+    height:25px;
+    width:50px;
+}
+
+
+#freebox div div div.customcontrol:nth-child(17) {
+    left: 90px;
+}
+
+#freebox div div div.customcontrol:nth-child(20) {
+    left: 145px;
+}
+
+#freebox div div div.customcontrol:nth-child(37) {
+    left: 200px;
+}
+
+#freebox div div div.customcontrol:nth-child(38),
+#freebox div div div.customcontrol:nth-child(39),
+#freebox div div div.customcontrol:nth-child(40),
+#freebox div div div.customcontrol:nth-child(41) {
+    left: 35px;
+    top: 355px;
+}
+
+#freebox div div div.customcontrol:nth-child(39) {
+    left: 90px;
+}
+
+#freebox div div div.customcontrol:nth-child(40) {
+    left: 145px;
+}
+
+#freebox div div div.customcontrol:nth-child(41) {
+    left: 200px;
+}
+
+#freebox div div div.customcontrol:nth-child(7) {
+    position: fixed;
+    left: 35px;
+    top: 70px;
+    background:url(../img/remote/haut+.png) no-repeat;
+    -webkit-box-shadow: none;
+    height: 47px;
+    width: 40px;
+}
+
+#freebox div div div.customcontrol:nth-child(8) {
+    position: fixed;
+    left:35px;
+    top: 117px;
+    background:url(../img/remote/bas-.png) no-repeat;
+    -webkit-box-shadow: none;
+    height:45px;
+    width:41px;
+
+}
+
+#freebox div div div.customcontrol:nth-child(9) {
+    position: fixed;
+    left: 220px;
+    top: 70px;
+    background:url(../img/remote/hautfleche.png) no-repeat;
+    -webkit-box-shadow: none;
+    height:47px;
+    width:39px;
+}
+
+#freebox div div div.customcontrol:nth-child(10) {
+    position: fixed;
+    left:220px;
+    top: 117px;
+    background:url(../img/remote/basfleche.png) no-repeat;
+    -webkit-box-shadow: none;
+    height:45px;
+    width:39px;
+}
+
+#freebox div div div.customcontrol:nth-child(11) {
+    position: fixed;
+    left: 90px;
+    top: 50px;
+    background:url(../img/remote/btcentraleht.png) no-repeat;
+    -webkit-box-shadow: none;
+    height: 38px;
+    width: 114px;
+}
+
+#freebox div div div.customcontrol:nth-child(12) {
+    position: fixed;
+    left: 120px;
+    top: 84px;
+    text-shadow: rgba(0,0,0,.2) 1px 2px 1px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    height: 58px;
+    width: 58px;
+}
+
+#freebox div div div.customcontrol:nth-child(13) {
+    position: fixed;
+    left: 171px;
+    top: 55px;
+    background:url(../img/remote/btcentraledroite.png) no-repeat;
+    -webkit-box-shadow: none;
+    height: 115px;
+    width: 38px;
+}
+
+#freebox div div div.customcontrol:nth-child(14) {
+    position: fixed;
+    left: 89px;
+    top: 136px;
+    background:url(../img/remote/btcentralebas.png) no-repeat;
+    -webkit-box-shadow: none;
+    height:38px;
+    width:116px;
+}
+
+#freebox div div div.customcontrol:nth-child(15) {
+    position: fixed;
+    left: 85px;
+    top: 53px;
+    background:url(../img/remote/btcentralegauche.png) no-repeat;
+    -webkit-box-shadow: none;
+    height: 115px;
+    width: 38px;
+}
+
+#freebox div div div:nth-child(18):after,
+#freebox div div div:nth-child(19):after,
+#freebox div div div:nth-child(33):after,
+#freebox div div div:nth-child(34):after,
+#freebox div div div:nth-child(35):after,
+#freebox div div div:nth-child(36):after {
+    background:url(../img/remote/rec.png) no-repeat;
+    height: 24px;
+    width: 34px;
+    content:"";
+    display: block;
+    margin-top: 7px;
+    margin-left: 3px;
+    left: 9px;
+}
+
+#freebox div div div:nth-child(19):after {
+    background:url(../img/remote/play.png) no-repeat;
+}
+
+#freebox div div div:nth-child(33):after {
+    background:url(../img/remote/bwd.png) no-repeat;
+}
+
+#freebox div div div:nth-child(34):after {
+    background:url(../img/remote/prev.png) no-repeat;
+}
+
+#freebox div div div:nth-child(35):after {
+    background:url(../img/remote/fwd.png) no-repeat;
+}
+
+#freebox div div div:nth-child(36):after {
+    background:url(../img/remote/next.png) no-repeat;
+}
+
+#freebox div div div.customcontrol:nth-child(18),
+#freebox div div div.customcontrol:nth-child(19) {
+    left: 211px;
+    top: 185px;
+}
+
+#freebox div div div.customcontrol:nth-child(19) {
+    left: 260px;
+}
+
+#freebox div div:nth-child(33),
+#freebox div div:nth-child(35) {
+    left: 211px;
+    top: 224px;
+}
+
+#freebox div div:nth-child(35) {
+    left: 260px;
+}
+
+#freebox div div:nth-child(34),
+#freebox div div:nth-child(36) {
+    left: 211px;
+    top: 263px;
+}
+
+#freebox div div:nth-child(36) {
+    left: 260px;
+}
+
+/* First Digits line */
+#freebox div div:nth-child(22),
+#freebox div div:nth-child(23),
+#freebox div div:nth-child(24),
+#freebox div div:nth-child(25) {
+    left: 5px;
+    top: 185px;
+}
+
+#freebox div div:nth-child(23) {
+    left: 54px;
+}
+
+
+#freebox div div:nth-child(24) {
+    left: 103px;
+}
+
+#freebox div div:nth-child(25){
+    left: 152px;
+}
+
+#freebox div div:nth-child(26),
+#freebox div div:nth-child(27),
+#freebox div div:nth-child(28),
+#freebox div div:nth-child(29) {
+    left: 5px;
+    top: 224px;
+}
+
+#freebox div div:nth-child(27) {
+    left: 54px;
+}
+
+#freebox div div:nth-child(28) {
+    left:103px;
+}
+
+#freebox div div:nth-child(29) {
+    left:152px;
+}
+
+#freebox div div:nth-child(31),
+#freebox div div:nth-child(21),
+#freebox div div:nth-child(30),
+#freebox div div:nth-child(31),
+#freebox div div:nth-child(32) {
+    left:5px;
+    top: 263px;
+}
+
+#freebox div div:nth-child(21) {
+    left:54px;
+}
+
+#freebox div div:nth-child(30) {
+    left:103px;
+}
+
+#freebox div div:nth-child(32) {
+    left:152px;
+}
