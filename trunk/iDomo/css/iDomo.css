@@ -76,11 +76,11 @@ border:1px solid #5182ce;border-left:none;border-right:none;
   //width: 100%
 }
 
-.room-list-item {
+.room-list-item, .device-list-item {
     height: 50px;
 }    
 
-.room_name {
+.room_name, .device_name {
     float: left;
     width:160px;
 }
