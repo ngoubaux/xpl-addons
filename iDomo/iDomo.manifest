@@ -6,7 +6,7 @@ index.html
 
 ###
 CACHE:
-#index.html
+# index.html
 ## Extern
 ext/ext-touch.js
 ext/resources/css/ext-touch.css
@@ -17,8 +17,30 @@ img/tabicons/favorites.png
 img/promo_orange_12.png
 img/promotion_12.png
 
+## Image Remote
+img/remote/bas-.png
+imt/remote/haut+.png
+img/remote/basfleche.png
+img/remote/hautfleche.png
+img/remote/btcentralebas.png
+img/remote/btcentraleht.png
+img/remote/btcentraledroite.png
+img/remote/btcentrailegauche.png
+img/remote/power.png
+img/remote/mute.png
+img/remote/play.png
+img/remote/stop.png
+img/remote/rec.png
+img/remote/bwd.png
+img/remote/fwd.png
+img/remote/prev.png
+img/remote/next.png
+
+
 ## CSS
 css/iDomo.css
+css/remote.css
+css/custom.css
 
 ## Script
 src/index.js
