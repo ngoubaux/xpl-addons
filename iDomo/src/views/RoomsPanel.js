@@ -73,51 +73,48 @@ iDomo.views.RoomsPanel = Ext.extend(Ext.Panel, {
     },
     
     changePanel: function (card, title) {
-        
 	   var header = this.dockedItems.items[0];
-    	   header.getComponent(0).show();
-             header.setTitle(title);
-	   this.getComponent(1).title = title;
-
+       header.getComponent(0).show();
+       header.setTitle(title);
+	   this.getComponent(card).title = title;
 	   this.setCard(card, {type: 'slide', direction: 'left'});  
     },
     
     onControlItemTap: function(dv , index, item, e) {
-         var ds = dv.getStore(),
-	r = ds.getAt(index);
-
-	eval(r.get('action'));
+        var ds = dv.getStore();
+  	    r = ds.getAt(index);
+	    eval(r.get('action'));
     },
     
     onDeviceItemTap: function (dv, index, item, e) {
-            var ds = dv.getStore(),
-	   r = ds.getAt(index);
+        var ds = dv.getStore(),
+	    r = ds.getAt(index);
 
-	   var controls = r.get('controls');
-            iDomo.stores.Controls.loadData(controls);
+	    var controls = r.get('controls');
+        iDomo.stores.Controls.loadData(controls);
             
-            this.changePanel(2, r.get('name'));  
+        this.changePanel(2, r.get('name'));  
     },
     
     onRoomItemTap: function(dv, index, item, e) {
-            var ds = dv.getStore(),
+       var ds = dv.getStore(),
 	   r = ds.getAt(index);
 
 	   var devices = r.get('devices');
        iDomo.stores.Devices.loadData(devices);
 
-            this.changePanel(1, r.get('name'));  
+       this.changePanel(1, r.get('name'));  
 	  // this.fireEvent('songselect', r.get('MediaKey'));
 	  
-	 var setting  = new iDomo.views.UserSetting({
+	   var setting  = new iDomo.views.UserSetting({
 			title: 'param',
 			iconCls: 'settings'
 		});
-	app.getTabBar().add(setting);
+	    app.getTabBar().add(setting);
     },
     
 	 
-  onRefreshTap: function() {
+    onRefreshTap: function() {
  	/*setTimeout(function(){
                   if (!this.isLoaded) {
  		   Ext.getBody().mask(false, '<div class="loading">Loading&hellip;</div>');
@@ -131,8 +128,8 @@ iDomo.views.RoomsPanel = Ext.extend(Ext.Panel, {
     loadRoomsStore: function(rooms) {
 	 //this.refreshIcon.setDisabled(false);
 	 //this.toolbar.setTitle("Pieces");
-	this.isLoaded = true;
-	Ext.getBody().unmask();
-    iDomo.stores.Rooms.loadData(rooms);
+	    this.isLoaded = true;
+	    Ext.getBody().unmask();
+        iDomo.stores.Rooms.loadData(rooms);
     }
  });
