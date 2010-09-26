@@ -49,18 +49,10 @@ iDomo.App = Ext.extend(Ext.TabPanel, {
 			title: 'settings',
 			iconCls: 'settings'
 		});
-    	/*
-    	this.aboutPanel = new Ext.Panel({
-    									title:'about',
-    									iconCls:'info',
-    									contentEl:'about'
-    									});
-    	*/
+		
     	this.items = [
             this.roomsPanel,
-		    //this.analyticsPanel,this.groupPanel,
 		    this.userSettingPanel,
-		    //,this.aboutPanel
 		]; 
   	   iDomo.App.superclass.initComponent.call(this);
   	   
@@ -69,10 +61,6 @@ iDomo.App = Ext.extend(Ext.TabPanel, {
 	   
     	this.roomsPanel.loadRoomsStore(iDomo.Service.rooms);
   	    //this.tabBar.items.items[1].setDisabled(true);
-  	    //this.items.add(this.roomsPanel);
-  	    
-  	    //this.doLayout();
-  	   //this.analyticsPanel.on('songselect', this.onSongSelect, this);
 	},
 	
 	onItemTap: function(dv , index, item, e) {
@@ -88,12 +76,6 @@ iDomo.App = Ext.extend(Ext.TabPanel, {
 	},
 	
 	loadConfiguration: function() {
-	   /*
-	   for (var i = this.items.length - 1; i > 1; i--) {
-	       this.remove(this.items[i]);
-	   }
-	   this.doLayout();
-	   */
 	   iDomo.Service.loadConfiguration(this.onLoadConfiguration, this); 
 	},
 	
