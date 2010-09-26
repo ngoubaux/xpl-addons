@@ -59,12 +59,13 @@ iDomo.App = Ext.extend(Ext.TabPanel, {
     	this.items = [
             this.roomsPanel,
 		    //this.analyticsPanel,this.groupPanel,
-		    this.userSettingPanel
+		    this.userSettingPanel,
 		    //,this.aboutPanel
 		]; 
   	   iDomo.App.superclass.initComponent.call(this);
   	   
 	   this.on('beforeactivate', this.onItemTap, this);
+	   this.on('afterrender', this.loadConfiguration, this);
 	   
     	this.roomsPanel.loadRoomsStore(iDomo.Service.rooms);
   	    //this.tabBar.items.items[1].setDisabled(true);
@@ -98,7 +99,6 @@ iDomo.App = Ext.extend(Ext.TabPanel, {
 	
 	initiate: function() { 
 	   iDomo.Service.init();
-	   this.loadConfiguration();
 	//if (Get_Cookie('UserId') && Get_Cookie('Password')) {
 	//iDomo.SubscriberService.fetchUserProfile(Get_Cookie('UserId'), Get_Cookie('Password'), this.onLoadProfile, this);
 	//Ext.getBody().mask(false, '<div class="loading">loading&hellip;</div>');    
@@ -117,37 +117,25 @@ iDomo.App = Ext.extend(Ext.TabPanel, {
 	},
 	
 	loadCustomPanels: function (panels) {
-	   for (var i = this.items.length - 1; i > 1; i--) {
-	       this.remove(this.items[i]);
-	   }
-	   
-	   for (i = 0; i < panels.length; i++) {
+	   var items = this.items;
+	   	   
+	   for (var i = 0; i < panels.length; i++) {
 	       var panel = panels[i];
-	       var card  = new iDomo.views.CustomPanel({
-	            cls:    panel.name,
-                id:     panel.name,
-                title:  panel.name,
-                //layout: 'card',
-                iconCls: 'favorites',
-                });
-                
-        card.loadControls(panel["controls"]);
-  	    this.add(card);
-  	    
-	   }
-	   /*
-	   this.roomsPanel = new iDomo.views.RoomsPanel({
-	       title: 'Rooms',
-		   iconCls: 'icon-tabpanel-home',
-        });
-        
-        this.userSettingPanel = new iDomo.views.UserSetting({
-			title: 'settings',
-			iconCls: 'settings'
-		});
-        
-  	    this.add(this.roomsPanel);
-  	    this.add(this.userSettingPanel);*/
+	       
+	       var card  = items.get(panel.name);
+	       if (!card) {
+             var card  = new iDomo.views.CustomPanel({
+                  cls:    panel.name,
+                  id:     panel.name,
+                  title:  panel.name,
+                  //layout: 'card',
+                  iconCls: 'favorites',
+                  });
+             this.insert(1,card);
+	       }         
+           card.loadControls(panel["controls"]);
+	    }
+
   	    this.tabBar.doLayout();
 	},
 	
