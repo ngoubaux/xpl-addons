@@ -285,8 +285,11 @@ iDomo.ServiceImpl = Ext.extend(Object, {
     					
     					var control = iDomo.Service.getControlByKey(device, jControl.key);
     					if (control) {
-    				        control.img_cls = "";
-    				        control.name_cls = "cls";
+    					   if (jDevice.type == "pressure" || jDevice.type == "battery" || 
+					           jDevice.type == "temp" || jDevice.type == "humidity") {
+    				              control.img_cls = "";
+    				              control.name_cls = "cls";
+					        }
     					    control.action = jControl.action;
     					}
     					iDomo.Service.update_control(control);
@@ -409,7 +412,8 @@ iDomo.ServiceImpl = Ext.extend(Object, {
               				            action: row.action, 
               				            name: row.name, 
               				            key: row.key,
-              				            img_cls: "cls"};
+              				            img_cls: "cls",
+              				            name_cls: ""};
               				      
 					              if (device.type == "pressure" || device.type == "battery" || 
 					                  device.type == "temp" || device.type == "humidity") {
