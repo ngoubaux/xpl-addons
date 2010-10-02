@@ -306,7 +306,7 @@ iDomo.ServiceImpl = Ext.extend(Object, {
     getRoomByKey: function (key) {
         for (var i = 0; i < iDomo.Service.rooms.length; i++) {
             var room = iDomo.Service.rooms[i];
-            if (key == room["key"])
+            if (key == room.key || (room.data && room.data.key == key))
                 return room;
         }
     },

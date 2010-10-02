@@ -4,12 +4,13 @@ http://w.goubs.net/json/iDomo.json
 http://chart.apis.google.com/
 index.html
 
-###
+##
 CACHE:
 # index.html
 ## Extern
 ext/ext-touch.js
 ext/resources/css/ext-touch.css
+ext/ext-touch-debug.js
 
 ## Images
 img/tabicons/home.png
