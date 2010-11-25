@@ -16,25 +16,28 @@ For this how to, Chacon technologie is taken as example
 
 == Add new technology ==
 
-Insert to _core_device_technology_ table
+Insert into _core_device_technology_ table
 
 {{{
-INSERT INTO  `domogik`.`core_device_technology` (
-`id` ,
-`name` ,
-`description`
-)
-VALUES (
-'chacon',  'Chacon',  'Protocol homeeasy'
-);
+INSERT INTO  `domogik`.`core_device_technology` (`id`, `name`, `description`)
+VALUES ('chacon',  'Chacon',  'Protocol homeeasy');
 }}}
 
 == Add new type ==
 
-Insert to _core_device_type_
+Insert into _core_device_type_
 
 {{{
 INSERT INTO `core_device_type` (`id`, `device_technology_id`, `name`, `description`) VALUES
 ('chacon.switch', 'chacon', 'Switch', NULL),
 ('chacon.dimmer', 'chacon', 'Dimmer', NULL);
+}}}
+
+== Add new model ==
+
+Insert into _core_device_feature_model_ table
+
+{{{
+INSERT INTO  `domogik`.`core_device_feature_model`(`id`,`name`,`feature_type`,`device_type_id`,`parameters`,`value_type`,`stat_key`,`return_confirmation`)
+VALUES ('chacon.switch.switch',  'Switch',  'actuator',  'chacon.switch',  '{&quot;command&quot;:&quot;&quot;,&quot;value0&quot;:&quot;off&quot;, &quot;value1&quot;:&quot;on&quot;}', 'binary',  'command',  '0');
 }}}
