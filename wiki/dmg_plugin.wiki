@@ -1,0 +1,40 @@
+#summary How to add external device to Domogik
+
+= Introduction =
+As explained on its website:
+
+Domogik is a free home automation solution. At the moment Domogik is still in development so there is no stable version yet. It is based on the xPL protocol? in order to easily use a lot of different technologies.
+
+[http://www.domogik.org/ Website]
+
+As Domogik is based on XPL, it is normally possible to include external device come from external module.
+
+= How to =
+
+Several steps are needed to add a new technology and device.
+For this how to, Chacon technologie is taken as example 
+
+== Add new technology ==
+
+Insert to _core_device_technology_ table
+
+{{{
+INSERT INTO  `domogik`.`core_device_technology` (
+`id` ,
+`name` ,
+`description`
+)
+VALUES (
+'chacon',  'Chacon',  'Protocol homeeasy'
+);
+}}}
+
+== Add new type ==
+
+Insert to _core_device_type_
+
+{{{
+INSERT INTO `core_device_type` (`id`, `device_technology_id`, `name`, `description`) VALUES
+('chacon.switch', 'chacon', 'Switch', NULL),
+('chacon.dimmer', 'chacon', 'Dimmer', NULL);
+}}}
