@@ -20,7 +20,8 @@ Insert into _core_device_technology_ table
 
 {{{
 INSERT INTO  `domogik`.`core_device_technology` (`id`, `name`, `description`)
-VALUES ('chacon',  'Chacon',  'Protocol homeeasy');
+VALUES ('chacon',  'Chacon',  'Protocol homeeasy'),
+('oregon', 'Oregon', 'Oregon Scientific weather sensors');
 }}}
 
 == Add new type ==
@@ -30,7 +31,8 @@ Insert into _core_device_type_
 {{{
 INSERT INTO `core_device_type` (`id`, `device_technology_id`, `name`, `description`) VALUES
 ('chacon.switch', 'chacon', 'Switch', NULL),
-('chacon.dimmer', 'chacon', 'Dimmer', NULL);
+('chacon.dimmer', 'chacon', 'Dimmer', NULL),
+('oregon.sensor',  'oregon',  'Oregon sensor',  'Oregon Scientific weather sensors');
 }}}
 
 == Add new model ==
